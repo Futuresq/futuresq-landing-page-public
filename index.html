@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuresq UG - Digital Solutions for Finance & Real Estate</title>
+  <meta name="description" content="Futuresq UG builds digital solutions for financial services and real estate. Makers of Sparly, futuresq.immo, and financial planning software.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F2D5F'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='56' font-weight='700' text-anchor='middle' fill='%2343CEA2'%3EF%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --navy: #0F2D5F;
+      --navy-deep: #081a3a;
+      --teal: #43CEA2;
+      --teal-dark: #36a882;
+      --text: #1a1a1a;
+      --muted: #666;
+      --surface: #ffffff;
+      --bg: #fafbfc;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(15, 45, 95, 0.06);
+      --shadow-md: 0 4px 16px rgba(15, 45, 95, 0.08);
+      --shadow-lg: 0 10px 32px rgba(15, 45, 95, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--teal-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.1em;
+      letter-spacing: -0.01em;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.92em;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-links a:hover {
+      color: var(--navy);
+      background: rgba(15, 45, 95, 0.04);
+      text-decoration: none;
+    }
+    .nav-links .nav-link-mobile-hide { display: inline-flex; }
+
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-left: 8px;
+    }
+    .lang-switch button {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      padding: 6px 10px;
+      font-size: 0.8em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .lang-switch button + button { border-left: 1px solid var(--border); }
+    .lang-switch button:hover { color: var(--navy); }
+    .lang-switch button.active {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 80px;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 0%, rgba(67, 206, 162, 0.18), transparent 70%),
+        radial-gradient(ellipse 50% 60% at 10% 100%, rgba(15, 45, 95, 0.12), transparent 70%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82em;
+      font-weight: 600;
+      color: var(--teal-dark);
+      background: rgba(67, 206, 162, 0.12);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2em, 4.4vw, 3.2em);
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .accent { color: var(--teal-dark); }
+    .hero p.lead {
+      font-size: 1.15em;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.98em;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover { background: var(--navy-deep); box-shadow: var(--shadow-md); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--navy);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--navy); }
+    .btn .arrow { transition: transform 0.15s; }
+    .btn:hover .arrow { transform: translateX(2px); }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      max-width: 440px;
+      justify-self: end;
+      width: 100%;
+    }
+    .orb {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(from 210deg at 50% 50%, var(--teal), var(--navy), var(--teal));
+      filter: blur(40px);
+      opacity: 0.35;
+    }
+    .cards-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
+    .float-card {
+      position: absolute;
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px;
+      animation: float 6s ease-in-out infinite;
+    }
+    .float-card .fc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.2em;
+    }
+    .float-card .fc-title { font-weight: 700; color: var(--navy); font-size: 0.95em; }
+    .float-card .fc-sub { color: var(--muted); font-size: 0.8em; }
+    .fc-1 { top: 12%; left: 0; animation-delay: 0s; }
+    .fc-1 .fc-icon { background: rgba(67, 206, 162, 0.15); color: var(--teal-dark); }
+    .fc-2 { top: 42%; right: 0; animation-delay: 1.5s; }
+    .fc-2 .fc-icon { background: rgba(15, 45, 95, 0.1); color: var(--navy); }
+    .fc-3 { bottom: 10%; left: 12%; animation-delay: 3s; }
+    .fc-3 .fc-icon { background: rgba(247, 186, 60, 0.18); color: #b8820e; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .float-card { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    .section-header h2 {
+      font-size: clamp(1.6em, 3vw, 2.2em);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-header p { color: var(--muted); font-size: 1.05em; }
+
+    /* Solutions */
+    #solutions { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .solution-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(67, 206, 162, 0.08) 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    .solution-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(67, 206, 162, 0.5);
+    }
+    .solution-card:hover::before { opacity: 1; }
+    .solution-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      font-size: 1.6em;
+    }
+    .solution-card h3 {
+      font-size: 1.35em;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .solution-card .solution-desc {
+      color: var(--muted);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .solution-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      font-size: 0.95em;
+      align-self: flex-start;
+    }
+    .solution-cta:hover { text-decoration: none; color: var(--navy); }
+    .solution-cta .arrow { transition: transform 0.15s; }
+    .solution-cta:hover .arrow { transform: translateX(3px); }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.72em;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+    .status-live {
+      background: rgba(67, 206, 162, 0.15);
+      color: var(--teal-dark);
+    }
+    .status-soon {
+      background: rgba(247, 186, 60, 0.2);
+      color: #a06f00;
+    }
+    .card-sparly .solution-icon { background: rgba(67, 206, 162, 0.15); color: var(--teal-dark); }
+    .card-immo .solution-icon { background: rgba(15, 45, 95, 0.1); color: var(--navy); }
+    .card-finplan .solution-icon { background: rgba(247, 186, 60, 0.2); color: #a06f00; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: clamp(1.6em, 3vw, 2.2em);
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--muted);
+      font-size: 1.05em;
+      margin-bottom: 16px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .value-card .v-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(67, 206, 162, 0.15);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      font-size: 1.1em;
+    }
+    .value-card h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; font-size: 1em; }
+    .value-card p { color: var(--muted); font-size: 0.9em; }
+
+    /* Contact */
+    #contact { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+    #contact::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 60%;
+      height: 140%;
+      background: radial-gradient(circle, rgba(67, 206, 162, 0.25), transparent 60%);
+      pointer-events: none;
+    }
+    .contact-inner {
+      position: relative;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .contact-inner h2 {
+      font-size: clamp(1.6em, 3vw, 2.2em);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .contact-inner p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.05em;
+      margin-bottom: 28px;
+    }
+    .contact-inner .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+    }
+    .contact-inner .btn-primary:hover { background: #57e0b5; }
+
+    /* Footer */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 56px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .brand { color: #fff; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.9em; max-width: 320px; }
+    .footer-col h5 {
+      color: #fff;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.92em;
+    }
+    .footer-col a:hover { color: var(--teal); text-decoration: none; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85em;
+    }
+
+    /* Language toggle */
+    [data-lang]:not(.active-lang) { display: none; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero { padding: 64px 0 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { justify-self: center; max-width: 360px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-link-mobile-hide { display: none !important; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 520px) {
+      .container { padding: 0 18px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .float-card { min-width: 170px; padding: 12px 14px; }
+      .float-card .fc-icon { width: 34px; height: 34px; }
+      .fc-1 { top: 6%; }
+      .fc-3 { left: 4%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand" aria-label="Futuresq">
+      <span class="brand-mark">F</span>
+      <span>Futuresq</span>
+    </a>
+    <div class="nav-links">
+      <a href="#solutions" class="nav-link-mobile-hide">
+        <span data-lang="en">Solutions</span>
+        <span data-lang="de">Lösungen</span>
+      </a>
+      <a href="#about" class="nav-link-mobile-hide">
+        <span data-lang="en">About</span>
+        <span data-lang="de">Über uns</span>
+      </a>
+      <a href="#contact" class="nav-link-mobile-hide">
+        <span data-lang="en">Contact</span>
+        <span data-lang="de">Kontakt</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="de">DE</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>
+        <span data-lang="en">Digital solutions for <span class="accent">finance</span> and <span class="accent">real estate</span>.</span>
+        <span data-lang="de">Digitale Lösungen für <span class="accent">Finanzen</span> und <span class="accent">Immobilien</span>.</span>
+      </h1>
+      <p class="lead">
+        <span data-lang="en">We build thoughtful, modern software that helps people manage money and property with confidence, from pocket money to portfolio.</span>
+        <span data-lang="de">Wir entwickeln durchdachte, moderne Software, die Menschen dabei unterstützt, Geld und Immobilien sicher zu verwalten, vom Taschengeld bis zum Portfolio.</span>
+      </p>
+      <div class="cta-row">
+        <a href="#solutions" class="btn btn-primary">
+          <span data-lang="en">Explore our solutions</span>
+          <span data-lang="de">Unsere Lösungen entdecken</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span data-lang="en">Get in touch</span>
+          <span data-lang="de">Kontakt aufnehmen</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orb"></div>
+      <div class="cards-stack">
+        <div class="float-card fc-1">
+          <div class="fc-icon">💰</div>
+          <div>
+            <div class="fc-title">Sparly</div>
+            <div class="fc-sub">
+              <span data-lang="en">Pocket money App</span>
+              <span data-lang="de">Taschengeld App</span>
+            </div>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-icon">🏡</div>
+          <div>
+            <div class="fc-title">Futuresq Immo</div>
+            <div class="fc-sub">
+              <span data-lang="en">Real estate</span>
+              <span data-lang="de">Immobilien</span>
+            </div>
+          </div>
+        </div>
+        <div class="float-card fc-3">
+          <div class="fc-icon">📊</div>
+          <div>
+            <div class="fc-title">
+              <span data-lang="en">Financial Planning</span>
+              <span data-lang="de">Finanzplanung</span>
+            </div>
+            <div class="fc-sub">
+              <span data-lang="en">Coming soon</span>
+              <span data-lang="de">Demnächst</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions -->
+<section id="solutions">
+  <div class="container">
+    <div class="section-header">
+      <h2>
+        <span data-lang="en">Our solutions</span>
+        <span data-lang="de">Unsere Lösungen</span>
+      </h2>
+      <p>
+        <span data-lang="en">A growing family of products designed around privacy, clarity, and long-term value.</span>
+        <span data-lang="de">Eine wachsende Produktfamilie, entwickelt mit Fokus auf Datenschutz, Klarheit und nachhaltigen Mehrwert.</span>
+      </p>
+    </div>
+
+    <div class="solutions-grid">
+      <!-- Sparly -->
+      <article class="solution-card card-sparly">
+        <div class="solution-icon">💰</div>
+        <h3>
+          Sparly
+          <span class="status-badge status-live">
+            <span data-lang="en">Live</span>
+            <span data-lang="de">Verfügbar</span>
+          </span>
+        </h3>
+        <p class="solution-desc">
+          <span data-lang="en">A pocket money app for young savers. Helps kids and parents track allowance, savings goals, and spending. Private and on-device.</span>
+          <span data-lang="de">Eine Taschengeld-App für junge Sparer. Kinder und Eltern behalten Taschengeld, Sparziele und Ausgaben im Blick. Datenschutzfreundlich, direkt auf dem Gerät.</span>
+        </p>
+        <a href="sparly/index.html" class="solution-cta">
+          <span data-lang="en">Visit Sparly</span>
+          <span data-lang="de">Sparly besuchen</span>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <!-- Futuresq Immo -->
+      <article class="solution-card card-immo">
+        <div class="solution-icon">🏡</div>
+        <h3>
+          Futuresq Immo
+          <span class="status-badge status-soon">
+            <span data-lang="en">Coming soon</span>
+            <span data-lang="de">Demnächst</span>
+          </span>
+        </h3>
+        <p class="solution-desc">
+          <span data-lang="en">Digital services for the real estate sector, from discovery to management. We're building tools that bring transparency and simplicity to property.</span>
+          <span data-lang="de">Digitale Dienste für die Immobilienbranche, von der Suche bis zur Verwaltung. Wir entwickeln Werkzeuge, die Transparenz und Einfachheit in die Welt der Immobilien bringen.</span>
+        </p>
+        <a href="https://futuresq.immo/" class="solution-cta">
+          <span data-lang="en">futuresq.immo</span>
+          <span data-lang="de">futuresq.immo</span>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+
+      <!-- Financial Planning -->
+      <article class="solution-card card-finplan">
+        <div class="solution-icon">📊</div>
+        <h3>
+          <span data-lang="en">Financial Planning</span>
+          <span data-lang="de">Finanzplanung</span>
+          <span class="status-badge status-soon">
+            <span data-lang="en">Coming soon</span>
+            <span data-lang="de">Demnächst</span>
+          </span>
+        </h3>
+        <p class="solution-desc">
+          <span data-lang="en">Software that makes long-term financial planning accessible, helping individuals and advisors map goals, assets, and scenarios with clarity.</span>
+          <span data-lang="de">Software, die langfristige Finanzplanung zugänglich macht. Privatpersonen und Berater visualisieren Ziele, Vermögen und Szenarien übersichtlich.</span>
+        </p>
+        <a href="#contact" class="solution-cta">
+          <span data-lang="en">Stay informed</span>
+          <span data-lang="de">Auf dem Laufenden bleiben</span>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <h2>
+        <span data-lang="en">Who we are</span>
+        <span data-lang="de">Wer wir sind</span>
+      </h2>
+      <p>
+        <span data-lang="en">Futuresq UG (haftungsbeschränkt) is a technology company based in Leinfelden-Echterdingen, Germany. We focus on digital solutions in financial services and real estate.</span>
+        <span data-lang="de">Die Futuresq UG (haftungsbeschränkt) ist ein Technologieunternehmen mit Sitz in Leinfelden-Echterdingen, Deutschland. Wir konzentrieren uns auf digitale Lösungen in den Bereichen Finanzdienstleistungen und Immobilien.</span>
+      </p>
+      <p>
+        <span data-lang="en">Our approach: ship products that respect users, protect their data, and get out of the way. Each product is made to be genuinely useful.</span>
+        <span data-lang="de">Unser Ansatz: Produkte, die Nutzer respektieren, ihre Daten schützen und sich unauffällig in den Alltag fügen. Jedes Produkt soll wirklich nützlich sein.</span>
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="v-icon">🔒</div>
+        <h4>
+          <span data-lang="en">Privacy first</span>
+          <span data-lang="de">Datenschutz zuerst</span>
+        </h4>
+        <p>
+          <span data-lang="en">Data minimization is a default, not an option.</span>
+          <span data-lang="de">Datensparsamkeit als Standard, nicht als Option.</span>
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="v-icon">✨</div>
+        <h4>
+          <span data-lang="en">Thoughtful design</span>
+          <span data-lang="de">Durchdachtes Design</span>
+        </h4>
+        <p>
+          <span data-lang="en">Software should feel calm, clear, and respectful.</span>
+          <span data-lang="de">Software sollte ruhig, klar und respektvoll wirken.</span>
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="v-icon">🎯</div>
+        <h4>
+          <span data-lang="en">Long-term value</span>
+          <span data-lang="de">Langfristiger Mehrwert</span>
+        </h4>
+        <p>
+          <span data-lang="en">We build for decades, not quarters.</span>
+          <span data-lang="de">Wir entwickeln für Jahrzehnte, nicht für Quartale.</span>
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="v-icon">🛡️</div>
+        <h4>
+          <span data-lang="en">Trust by default</span>
+          <span data-lang="de">Vertrauen als Standard</span>
+        </h4>
+        <p>
+          <span data-lang="en">GDPR-native.</span>
+          <span data-lang="de">DSGVO-konform.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container contact-inner">
+    <h2>
+      <span data-lang="en">Let's build something useful.</span>
+      <span data-lang="de">Lassen Sie uns etwas Sinnvolles schaffen.</span>
+    </h2>
+    <p>
+      <span data-lang="en">Questions, partnerships, or feedback. We'd love to hear from you.</span>
+      <span data-lang="de">Fragen, Partnerschaften oder Feedback. Wir freuen uns auf Ihre Nachricht.</span>
+    </p>
+    <a href="mailto:contact@futuresq.com" class="btn btn-primary">
+      contact@futuresq.com
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand" aria-label="Futuresq">
+          <span class="brand-mark">F</span>
+          <span>Futuresq UG</span>
+        </a>
+        <p>
+          <span data-lang="en">Digital solutions for financial services and real estate. Made in Leinfelden-Echterdingen, Germany.</span>
+          <span data-lang="de">Digitale Lösungen für Finanzdienstleistungen und Immobilien. Entwickelt in Leinfelden-Echterdingen, Deutschland.</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>
+          <span data-lang="en">Products</span>
+          <span data-lang="de">Produkte</span>
+        </h5>
+        <ul>
+          <li><a href="sparly/">Sparly</a></li>
+          <li><a href="https://futuresq.immo/">Futuresq Immo</a></li>
+          <li>
+            <a href="#solutions">
+              <span data-lang="en">Financial Planning</span>
+              <span data-lang="de">Finanzplanung</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>
+          <span data-lang="en">Company</span>
+          <span data-lang="de">Unternehmen</span>
+        </h5>
+        <ul>
+          <li>
+            <a href="#about">
+              <span data-lang="en">About</span>
+              <span data-lang="de">Über uns</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact">
+              <span data-lang="en">Contact</span>
+              <span data-lang="de">Kontakt</span>
+            </a>
+          </li>
+          <li><a href="mailto:contact@futuresq.com">contact@futuresq.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>
+          <span data-lang="en">Legal</span>
+          <span data-lang="de">Rechtliches</span>
+        </h5>
+        <ul>
+          <li>
+            <a href="sparly/privacy-policy.html">
+              <span data-lang="en">Privacy (Sparly)</span>
+              <span data-lang="de">Datenschutz (Sparly)</span>
+            </a>
+          </li>
+          <li>
+            <a href="sparly/terms.html">
+              <span data-lang="en">Terms (Sparly)</span>
+              <span data-lang="de">AGB (Sparly)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © <span id="year"></span> Futuresq UG (haftungsbeschränkt)
+      </div>
+      <div>
+        <span data-lang="en">Leinfelden-Echterdingen, Germany</span>
+        <span data-lang="de">Leinfelden-Echterdingen, Deutschland</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var STORAGE_KEY = 'futuresq-lang';
+    var supported = ['en', 'de'];
+
+    function detectLang() {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && supported.indexOf(stored) !== -1) return stored;
+      var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      return supported.indexOf(browser) !== -1 ? browser : 'en';
+    }
+
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        el.classList.toggle('active-lang', el.getAttribute('data-lang') === lang);
+      });
+      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+      });
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-set-lang'));
+      });
+    });
+
+    applyLang(detectLang());
+
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>

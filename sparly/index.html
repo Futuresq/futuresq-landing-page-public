@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparly - Legal Documents</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 16px;
+      background: #fafafa;
+    }
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #666;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85em;
+      transition: all 0.2s;
+    }
+    .lang-switch button:hover {
+      border-color: #43CEA2;
+      color: #0F2D5F;
+    }
+    .lang-switch button.active {
+      background: #43CEA2;
+      border-color: #43CEA2;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 8px;
+      color: #0F2D5F;
+    }
+    .tagline {
+      color: #666;
+      font-size: 1em;
+    }
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .doc-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .doc-section .doc-links {
+      margin-top: auto;
+    }
+    .doc-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .doc-links a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #43CEA2;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95em;
+      transition: background 0.2s;
+    }
+    .doc-links a:hover {
+      background: #36a882;
+    }
+    .doc-description {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 12px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5e5;
+      color: #888;
+      font-size: 0.85em;
+    }
+    footer a {
+      color: #4a90d9;
+      text-decoration: none;
+    }
+    .screenshots {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .screenshot-placeholder {
+      width: 180px;
+      height: 360px;
+      background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 0.85em;
+      text-align: center;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ccc;
+    }
+    [data-lang]:not(.active-lang) { display: none; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en">English</button>
+    <button type="button" data-set-lang="de">Deutsch</button>
+  </div>
+
+  <header>
+    <h1>Sparly</h1>
+    <p class="tagline">
+      <span data-lang="en">Pocket money app for young savers</span>
+      <span data-lang="de">Taschengeld-App für junge Sparer</span>
+    </p>
+  </header>
+
+  <div class="screenshots">
+    <div class="screenshot-placeholder">
+      <span data-lang="en">Screenshot 1</span>
+      <span data-lang="de">Bildschirmfoto 1</span>
+    </div>
+    <div class="screenshot-placeholder">
+      <span data-lang="en">Screenshot 2</span>
+      <span data-lang="de">Bildschirmfoto 2</span>
+    </div>
+    <div class="screenshot-placeholder">
+      <span data-lang="en">Screenshot 3</span>
+      <span data-lang="de">Bildschirmfoto 3</span>
+    </div>
+  </div>
+
+  <div class="doc-grid">
+    <div class="doc-section">
+      <h2>
+        <span data-lang="en">Privacy Policy</span>
+        <span data-lang="de">Datenschutzerklärung</span>
+      </h2>
+      <p class="doc-description">
+        <span data-lang="en">Your data never leaves your device. Learn how Sparly keeps it private.</span>
+        <span data-lang="de">Ihre Daten verlassen niemals Ihr Gerät. Erfahren Sie, wie Sparly sie schützt.</span>
+      </p>
+      <div class="doc-links">
+        <a data-lang="en" href="privacy-policy.html">Read Privacy Policy</a>
+        <a data-lang="de" href="privacy-policy.html">Datenschutzerklärung lesen</a>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>
+        <span data-lang="en">Terms of Service</span>
+        <span data-lang="de">Nutzungsbedingungen</span>
+      </h2>
+      <p class="doc-description">
+        <span data-lang="en">The terms under which you use Sparly.</span>
+        <span data-lang="de">Die Bedingungen, unter denen Sie Sparly nutzen.</span>
+      </p>
+      <div class="doc-links">
+        <a data-lang="en" href="terms.html">Read Terms of Service</a>
+        <a data-lang="de" href="terms.html">Nutzungsbedingungen lesen</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <span data-lang="en">Sparly is developed by Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germany.</span>
+      <span data-lang="de">Sparly wird entwickelt von der Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Deutschland.</span>
+      <br>
+      <span data-lang="en">Contact:</span>
+      <span data-lang="de">Kontakt:</span>
+      <a href="mailto:contact@futuresq.com">contact@futuresq.com</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'sparly-lang';
+      var supported = ['en', 'de'];
+
+      function detectLang() {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (stored && supported.indexOf(stored) !== -1) return stored;
+        var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        return supported.indexOf(browser) !== -1 ? browser : 'en';
+      }
+
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-lang]').forEach(function (el) {
+          el.classList.toggle('active-lang', el.getAttribute('data-lang') === lang);
+        });
+        document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+        });
+        localStorage.setItem(STORAGE_KEY, lang);
+      }
+
+      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyLang(btn.getAttribute('data-set-lang'));
+        });
+      });
+
+      applyLang(detectLang());
+    })();
+  </script>
+</body>
+</html>
