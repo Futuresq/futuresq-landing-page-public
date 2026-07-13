@@ -115,22 +115,16 @@
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
       margin-bottom: 40px;
+      padding: 0 16px;
     }
-    .screenshot-placeholder {
+    .screenshots img {
       width: 180px;
-      height: 360px;
-      background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+      height: auto;
       border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 0.85em;
-      text-align: center;
-      padding: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 1px solid #ccc;
     }
     [data-lang]:not(.active-lang) { display: none; }
   </style>
@@ -144,24 +138,22 @@
   <header>
     <h1>Sparly</h1>
     <p class="tagline">
-      <span data-lang="en">Pocket money app for young savers</span>
-      <span data-lang="de">Taschengeld-App für junge Sparer</span>
+      <span data-lang="en">The Pocket money app for young savers</span>
+      <span data-lang="de">Die Taschengeld-App für junge Sparer</span>
     </p>
   </header>
 
   <div class="screenshots">
-    <div class="screenshot-placeholder">
-      <span data-lang="en">Screenshot 1</span>
-      <span data-lang="de">Bildschirmfoto 1</span>
-    </div>
-    <div class="screenshot-placeholder">
-      <span data-lang="en">Screenshot 2</span>
-      <span data-lang="de">Bildschirmfoto 2</span>
-    </div>
-    <div class="screenshot-placeholder">
-      <span data-lang="en">Screenshot 3</span>
-      <span data-lang="de">Bildschirmfoto 3</span>
-    </div>
+    <img data-lang="en" src="img/en/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly app: pocket money overview with available balance, income and expenses">
+    <img data-lang="de" src="img/de/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Taschengeld-Übersicht mit verfügbarem Guthaben, Einnahmen und Ausgaben">
+    <img data-lang="en" src="img/en/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly app: wishes with savings goals">
+    <img data-lang="de" src="img/de/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Wünsche mit Sparzielen">
+    <img data-lang="en" src="img/en/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly app: review with savings, charts and tips">
+    <img data-lang="de" src="img/de/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Auswertung mit Ersparnissen, Diagrammen und Tipps">
+    <img data-lang="en" src="img/en/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly app: collect badges as you save">
+    <img data-lang="de" src="img/de/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Abzeichen sammeln beim Sparen">
+    <img data-lang="en" src="img/en/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly app: 100% private – no cloud, no account, no ads">
+    <img data-lang="de" src="img/de/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly App: 100% privat – keine Cloud, kein Konto, keine Werbung">
   </div>
 
   <div class="doc-grid">
