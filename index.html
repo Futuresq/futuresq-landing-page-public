@@ -237,6 +237,11 @@
       min-width: 200px;
       animation: float 6s ease-in-out infinite;
     }
+    a.float-card:hover {
+      text-decoration: none;
+      border-color: rgba(67, 206, 162, 0.5);
+      box-shadow: 0 14px 36px rgba(15, 45, 95, 0.16);
+    }
     .float-card .fc-icon {
       width: 40px;
       height: 40px;
@@ -289,6 +294,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
+      scroll-margin-top: 84px;
       padding: 28px;
       display: flex;
       flex-direction: column;
@@ -575,10 +581,10 @@
         </a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="orb"></div>
+    <div class="hero-visual">
+      <div class="orb" aria-hidden="true"></div>
       <div class="cards-stack">
-        <div class="float-card fc-1">
+        <a href="#product-sparly" class="float-card fc-1">
           <div class="fc-icon"><img src="sparly/img/sparly-icon.png" alt=""></div>
           <div>
             <div class="fc-title">Sparly</div>
@@ -587,8 +593,8 @@
               <span data-lang="de">Taschengeld App</span>
             </div>
           </div>
-        </div>
-        <div class="float-card fc-2">
+        </a>
+        <a href="#product-immo" class="float-card fc-2">
           <div class="fc-icon">🏡</div>
           <div>
             <div class="fc-title">Futuresq Immo</div>
@@ -597,8 +603,8 @@
               <span data-lang="de">Immobilien</span>
             </div>
           </div>
-        </div>
-        <div class="float-card fc-3">
+        </a>
+        <a href="#product-finplan" class="float-card fc-3">
           <div class="fc-icon">📊</div>
           <div>
             <div class="fc-title">
@@ -610,7 +616,7 @@
               <span data-lang="de">Demnächst</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -632,7 +638,7 @@
 
     <div class="solutions-grid">
       <!-- Sparly -->
-      <article class="solution-card card-sparly">
+      <article id="product-sparly" class="solution-card card-sparly">
         <div class="solution-icon"><img src="sparly/img/sparly-icon.png" alt=""></div>
         <h3>
           Sparly
@@ -653,7 +659,7 @@
       </article>
 
       <!-- Futuresq Immo -->
-      <article class="solution-card card-immo">
+      <article id="product-immo" class="solution-card card-immo">
         <div class="solution-icon">🏡</div>
         <h3>
           Futuresq Immo
@@ -674,7 +680,7 @@
       </article>
 
       <!-- Financial Planning -->
-      <article class="solution-card card-finplan">
+      <article id="product-finplan" class="solution-card card-finplan">
         <div class="solution-icon">📊</div>
         <h3>
           <span data-lang="en">Financial Planning</span>
