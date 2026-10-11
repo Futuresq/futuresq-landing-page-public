@@ -61,6 +61,32 @@
       color: #666;
       font-size: 1em;
     }
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .store-badges a {
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+    .store-badges a:hover {
+      opacity: 0.85;
+    }
+    .store-badges a:focus-visible {
+      outline: 2px solid #43CEA2;
+      outline-offset: 2px;
+    }
+    .store-badges img {
+      display: block;
+      height: 48px;
+      width: auto;
+    }
+    @media (max-width: 380px) {
+      .store-badges img { height: 40px; }
+    }
     h2 {
       font-size: 1.2em;
       margin-bottom: 12px;
@@ -150,6 +176,12 @@
       <span data-lang="en">The Pocket money app for young savers</span>
       <span data-lang="de">Die Taschengeld-App für junge Sparer</span>
     </p>
+    <div class="store-badges">
+      <a data-lang="en" href="https://apps.apple.com/app/sparly-pocket-money/id6770049363"><img src="img/badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store"></a>
+      <a data-lang="de" href="https://apps.apple.com/de/app/sparly-taschengeld/id6770049363"><img src="img/badges/app-store-de.svg" width="120" height="40" alt="Laden im App Store"></a>
+      <a data-lang="en" href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=en"><img src="img/badges/google-play-en.png" width="564" height="168" alt="Get it on Google Play"></a>
+      <a data-lang="de" href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=de"><img src="img/badges/google-play-de.png" width="646" height="192" alt="Jetzt bei Google Play"></a>
+    </div>
   </header>
 
   <div class="screenshots">
