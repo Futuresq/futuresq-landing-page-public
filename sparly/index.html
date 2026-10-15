@@ -58,10 +58,78 @@
       color: #0F2D5F;
     }
     .tagline {
-      color: #666;
-      font-size: 1em;
+      color: #333;
+      font-size: 1.15em;
+      font-weight: 500;
     }
-    .store-badges {
+    .intro {
+      color: #666;
+      font-size: 0.95em;
+      max-width: 660px;
+      margin: 12px auto 0;
+      text-wrap: balance;
+    }
+    .highlights {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0 16px;
+      list-style: none;
+    }
+    .highlights li {
+      background: rgba(67, 206, 162, 0.12);
+      color: #0F2D5F;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .highlights li::before {
+      content: "✓ ";
+      color: #36a882;
+    }
+    .highlights .languages {
+      position: relative;
+      cursor: help;
+    }
+    .languages > [data-lang] {
+      text-decoration: underline dotted;
+      text-underline-offset: 3px;
+    }
+    .languages:focus-visible {
+      outline: 2px solid #43CEA2;
+      outline-offset: 2px;
+    }
+    .lang-list {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 16px;
+      width: max-content;
+      padding: 8px 14px;
+      background: #fff;
+      color: #333;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: left;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s;
+    }
+    .languages:hover .lang-list,
+    .languages:focus .lang-list {
+      opacity: 1;
+      visibility: visible;
+    }    .store-badges {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -176,9 +244,29 @@
     <img class="app-icon" src="img/sparly-icon.png" alt="Sparly app icon" width="192" height="192">
     <h1>Sparly</h1>
     <p class="tagline">
-      <span data-lang="en">The Pocket money app for young savers</span>
-      <span data-lang="de">Die Taschengeld-App für junge Sparer</span>
+      <span data-lang="en">The pocket money app that helps kids learn to save</span>
+      <span data-lang="de">Die Taschengeld-App, mit der Kinder sparen lernen</span>
     </p>
+    <p class="intro">
+      <span data-lang="en">Kids track their income and spending, save up for their wishes and collect badges along the way. All data stays on your device: no cloud, no account, no tracking.</span>
+      <span data-lang="de">Kinder behalten Einnahmen und Ausgaben im Blick, sparen auf ihre Wünsche und sammeln dabei Abzeichen. Alle Daten bleiben auf Ihrem Gerät: keine Cloud, kein Konto, kein Tracking.</span>
+    </p>
+    <ul class="highlights">
+      <li><span data-lang="en">100% private</span><span data-lang="de">100&nbsp;% privat</span></li>
+      <li><span data-lang="en">Free</span><span data-lang="de">Kostenlos</span></li>
+      <li><span data-lang="en">No ads</span><span data-lang="de">Keine Werbung</span></li>
+      <li><span data-lang="en">No in-app purchases</span><span data-lang="de">Keine In-App-Käufe</span></li>
+      <li class="languages" tabindex="0" aria-describedby="lang-list">
+        <span data-lang="en">10 languages</span><span data-lang="de">10 Sprachen</span>
+        <span class="lang-list" id="lang-list" role="tooltip">
+          <span lang="de">Deutsch</span><span lang="en">English</span>
+          <span lang="tr">Türkçe</span><span lang="ro">Română</span>
+          <span lang="fr">Français</span><span lang="pl">Polski</span>
+          <span lang="es">Español</span><span lang="it">Italiano</span>
+          <span lang="cs">Čeština</span><span lang="sr">Српски / Srpski</span>
+        </span>
+      </li>
+    </ul>
     <div class="store-badges">
       <a data-lang="en" href="https://apps.apple.com/app/sparly-pocket-money/id6770049363"><img src="img/badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store"></a>
       <a data-lang="de" href="https://apps.apple.com/de/app/sparly-taschengeld/id6770049363"><img src="img/badges/app-store-de.svg" width="120" height="40" alt="Laden im App Store"></a>
