@@ -697,7 +697,7 @@
   let onbDraft = null;
   function renderOnboarding(a) {
     const draft = onbDraft || (onbDraft = { name: S.name || '', avatar: S.avatar });
-    const inp = h('input', { type: 'text', id: 'onb-name', maxlength: '20', autocomplete: 'off', placeholder: t('ui.onbNamePh'), value: draft.name });
+    const inp = h('input', { type: 'text', id: 'onb-player', maxlength: '20', autocomplete: 'off', placeholder: t('ui.onbNamePh'), value: draft.name });
     inp.addEventListener('input', () => { draft.name = inp.value; });
     const err = h('p', { class: 'hint', role: 'status' });
     const grid = h('div', { class: 'ava-grid', role: 'group', 'aria-label': app('onboarding.step_avatar') });
@@ -732,7 +732,7 @@
         h('p', { class: 'lead', style: { marginTop: '10px' } }, t('ui.onbLead'))),
       h('div', { class: 'onb-card' },
         h('h2', null, app('language_select.title')), langs,
-        h('h2', null, h('label', { for: 'onb-name' }, app('onboarding.step_name'))),
+        h('h2', null, h('label', { for: 'onb-player' }, app('onboarding.step_name'))),
         inp, err,
         h('h2', null, app('onboarding.step_avatar')),
         grid,
