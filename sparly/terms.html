@@ -332,14 +332,18 @@
         de: 'Sparly - Nutzungsbedingungen'
       };
 
+      // This page is in German and English only. The Sparly page links here with ?lang=de or ?lang=en,
+      // and any other language it remembers (cs, tr, …) gets the English version.
       function detectLang() {
+        var param = new URLSearchParams(location.search).get('lang');
+        if (supported.indexOf(param) !== -1) return param;
         var stored = localStorage.getItem(STORAGE_KEY);
-        if (stored && supported.indexOf(stored) !== -1) return stored;
+        if (stored) return stored === 'de' ? 'de' : 'en';
         var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
-        return supported.indexOf(browser) !== -1 ? browser : 'en';
+        return browser === 'de' ? 'de' : 'en';
       }
 
-      function applyLang(lang) {
+      function applyLang(lang, remember) {
         document.documentElement.lang = lang;
         document.title = titles[lang] || titles.en;
         document.querySelectorAll('[data-lang]').forEach(function (el) {
@@ -348,16 +352,17 @@
         document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
           btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
         });
-        localStorage.setItem(STORAGE_KEY, lang);
+        // Only an explicit switch is remembered, so a visit here keeps the language chosen on the Sparly page.
+        if (remember) localStorage.setItem(STORAGE_KEY, lang);
       }
 
       document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          applyLang(btn.getAttribute('data-set-lang'));
+          applyLang(btn.getAttribute('data-set-lang'), true);
         });
       });
 
-      applyLang(detectLang());
+      applyLang(detectLang(), false);
     })();
   </script>
 </body>

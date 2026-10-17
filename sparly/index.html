@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparly - Legal Documents</title>
+  <title>Sparly – The pocket money app for kids</title>
   <link rel="canonical" href="https://futuresq.com/sparly/">
   <link rel="icon" type="image/png" href="img/sparly-icon.png">
   <style>
@@ -20,27 +20,42 @@
     .lang-switch {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       gap: 8px;
       margin-bottom: 24px;
-    }
-    .lang-switch button {
-      background: transparent;
-      border: 1px solid #ccc;
       color: #666;
-      padding: 6px 12px;
+    }
+    .lang-switch svg {
+      width: 18px;
+      height: 18px;
+    }
+    .lang-switch select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23666' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 10px center / 10px 6px;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      cursor: pointer;
+      color: #333;
+      font: inherit;
       font-size: 0.85em;
-      transition: all 0.2s;
+      padding: 6px 30px 6px 12px;
+      cursor: pointer;
+      transition: border-color 0.2s;
     }
-    .lang-switch button:hover {
+    .lang-switch select:hover {
       border-color: #43CEA2;
-      color: #0F2D5F;
     }
-    .lang-switch button.active {
-      background: #43CEA2;
-      border-color: #43CEA2;
-      color: #fff;
+    .lang-switch select:focus-visible {
+      outline: 2px solid #43CEA2;
+      outline-offset: 2px;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
     header {
       text-align: center;
@@ -96,7 +111,7 @@
       position: relative;
       cursor: help;
     }
-    .languages > [data-lang] {
+    .languages > [data-i18n] {
       text-decoration: underline dotted;
       text-underline-offset: 3px;
     }
@@ -231,33 +246,39 @@
       border-radius: 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
-    [data-lang]:not(.active-lang) { display: none; }
   </style>
 </head>
 <body>
-  <div class="lang-switch" role="group" aria-label="Language">
-    <button type="button" data-set-lang="en">English</button>
-    <button type="button" data-set-lang="de">Deutsch</button>
+  <div class="lang-switch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+    <label class="visually-hidden" for="lang-select" data-i18n="language">Language</label>
+    <select id="lang-select">
+      <option value="de" lang="de">Deutsch</option>
+      <option value="en" lang="en">English</option>
+      <option value="tr" lang="tr">Türkçe</option>
+      <option value="ro" lang="ro">Română</option>
+      <option value="fr" lang="fr">Français</option>
+      <option value="pl" lang="pl">Polski</option>
+      <option value="es" lang="es">Español</option>
+      <option value="it" lang="it">Italiano</option>
+      <option value="cs" lang="cs">Čeština</option>
+      <option value="sr" lang="sr">Српски (ћирилица)</option>
+      <option value="sr-Latn" lang="sr-Latn">Srpski (latinica)</option>
+    </select>
   </div>
 
   <header>
-    <img class="app-icon" src="img/sparly-icon.png" alt="Sparly app icon" width="192" height="192">
+    <img class="app-icon" src="img/sparly-icon.png" data-i18n-alt="iconAlt" alt="Sparly app icon" width="192" height="192">
     <h1>Sparly</h1>
-    <p class="tagline">
-      <span data-lang="en">The pocket money app that helps kids learn to save</span>
-      <span data-lang="de">Die Taschengeld-App, mit der Kinder sparen lernen</span>
-    </p>
-    <p class="intro">
-      <span data-lang="en">Kids track their income and spending, save up for their wishes and collect badges along the way. All data stays on your device: no cloud, no account, no tracking.</span>
-      <span data-lang="de">Kinder behalten Einnahmen und Ausgaben im Blick, sparen auf ihre Wünsche und sammeln dabei Abzeichen. Alle Daten bleiben auf Ihrem Gerät: keine Cloud, kein Konto, kein Tracking.</span>
-    </p>
+    <p class="tagline" data-i18n="tagline">The pocket money app that helps kids learn to save</p>
+    <p class="intro" data-i18n="intro">Kids track their income and spending, save up for their wishes and collect badges along the way. All data stays on your device: no cloud, no account, no tracking.</p>
     <ul class="highlights">
-      <li><span data-lang="en">100% private</span><span data-lang="de">100&nbsp;% privat</span></li>
-      <li><span data-lang="en">Free</span><span data-lang="de">Kostenlos</span></li>
-      <li><span data-lang="en">No ads</span><span data-lang="de">Keine Werbung</span></li>
-      <li><span data-lang="en">No in-app purchases</span><span data-lang="de">Keine In-App-Käufe</span></li>
+      <li data-i18n="private">100% private</li>
+      <li data-i18n="free">Free</li>
+      <li data-i18n="noAds">No ads</li>
+      <li data-i18n="noIap">No in-app purchases</li>
       <li class="languages" tabindex="0" aria-describedby="lang-list">
-        <span data-lang="en">10 languages</span><span data-lang="de">10 Sprachen</span>
+        <span data-i18n="languages">10 languages</span>
         <span class="lang-list" id="lang-list" role="tooltip">
           <span lang="de">Deutsch</span><span lang="en">English</span>
           <span lang="tr">Türkçe</span><span lang="ro">Română</span>
@@ -267,96 +288,73 @@
         </span>
       </li>
     </ul>
+    <!-- Store badges exist in German and English, screenshots also in Romanian; every other language gets the English ones. -->
     <div class="store-badges">
-      <a data-lang="en" href="https://apps.apple.com/app/sparly-pocket-money/id6770049363"><img src="img/badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store"></a>
-      <a data-lang="de" href="https://apps.apple.com/de/app/sparly-taschengeld/id6770049363"><img src="img/badges/app-store-de.svg" width="120" height="40" alt="Laden im App Store"></a>
-      <a data-lang="en" href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=en"><img src="img/badges/google-play-en.png" width="564" height="168" alt="Get it on Google Play"></a>
-      <a data-lang="de" href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=de"><img src="img/badges/google-play-de.png" width="646" height="192" alt="Jetzt bei Google Play"></a>
+      <a data-assets="en" href="https://apps.apple.com/app/sparly-pocket-money/id6770049363"><img src="img/badges/app-store-en.svg" width="120" height="40" alt="Download on the App Store"></a>
+      <a data-assets="de" hidden href="https://apps.apple.com/de/app/sparly-taschengeld/id6770049363"><img src="img/badges/app-store-de.svg" width="120" height="40" alt="Laden im App Store"></a>
+      <a data-assets="en" data-play href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=en"><img src="img/badges/google-play-en.png" width="564" height="168" alt="Get it on Google Play"></a>
+      <a data-assets="de" hidden href="https://play.google.com/store/apps/details?id=com.futuresq.sparly&amp;hl=de"><img src="img/badges/google-play-de.png" width="646" height="192" alt="Jetzt bei Google Play"></a>
     </div>
   </header>
 
   <div class="screenshots">
-    <img data-lang="en" src="img/en/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly app: pocket money overview with available balance, income and expenses">
-    <img data-lang="de" src="img/de/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Taschengeld-Übersicht mit verfügbarem Guthaben, Einnahmen und Ausgaben">
-    <img data-lang="en" src="img/en/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly app: wishes with savings goals">
-    <img data-lang="de" src="img/de/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Wünsche mit Sparzielen">
-    <img data-lang="en" src="img/en/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly app: review with savings, charts and tips">
-    <img data-lang="de" src="img/de/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Auswertung mit Ersparnissen, Diagrammen und Tipps">
-    <img data-lang="en" src="img/en/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly app: collect badges as you save">
-    <img data-lang="de" src="img/de/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Abzeichen sammeln beim Sparen">
-    <img data-lang="en" src="img/en/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly app: 100% private – no cloud, no account, no ads">
-    <img data-lang="de" src="img/de/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly App: 100% privat – keine Cloud, kein Konto, keine Werbung">
+    <img data-shots="en" data-i18n-alt="shot1" src="img/en/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly app: pocket money overview with available balance, income and expenses">
+    <img data-shots="de" hidden src="img/de/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Taschengeld-Übersicht mit verfügbarem Guthaben, Einnahmen und Ausgaben">
+    <img data-shots="ro" hidden src="img/ro/screenshot-01.webp" width="540" height="1168" loading="lazy" alt="Aplicația Sparly: banii de buzunar dintr-o privire, cu soldul disponibil, venituri și cheltuieli">
+    <img data-shots="en" data-i18n-alt="shot2" src="img/en/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly app: wishes with savings goals">
+    <img data-shots="de" hidden src="img/de/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Wünsche mit Sparzielen">
+    <img data-shots="ro" hidden src="img/ro/screenshot-02.webp" width="540" height="1168" loading="lazy" alt="Aplicația Sparly: dorințe cu obiective de economii">
+    <img data-shots="en" data-i18n-alt="shot3" src="img/en/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly app: review with savings, charts and tips">
+    <img data-shots="de" hidden src="img/de/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Auswertung mit Ersparnissen, Diagrammen und Tipps">
+    <img data-shots="ro" hidden src="img/ro/screenshot-03.webp" width="540" height="1168" loading="lazy" alt="Aplicația Sparly: rezumat cu economii, grafice și sfaturi">
+    <img data-shots="en" data-i18n-alt="shot4" src="img/en/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly app: collect badges as you save">
+    <img data-shots="de" hidden src="img/de/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Sparly App: Abzeichen sammeln beim Sparen">
+    <img data-shots="ro" hidden src="img/ro/screenshot-04.webp" width="540" height="1168" loading="lazy" alt="Aplicația Sparly: aduni insigne în timp ce economisești">
+    <img data-shots="en" data-i18n-alt="shot5" src="img/en/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly app: 100% private – no cloud, no account, no ads">
+    <img data-shots="de" hidden src="img/de/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Sparly App: 100% privat – keine Cloud, kein Konto, keine Werbung">
+    <img data-shots="ro" hidden src="img/ro/screenshot-05.webp" width="540" height="1168" loading="lazy" alt="Aplicația Sparly: 100% privat – fără cloud, fără cont, fără reclame">
   </div>
 
   <div class="doc-grid">
     <div class="doc-section doc-wide">
-      <h2>
-        <span data-lang="en">How Sparly works, explained for kids</span>
-        <span data-lang="de">So funktioniert Sparly, erklärt für Kinder</span>
-      </h2>
-      <p class="doc-description">
-        <span data-lang="en">A playful learning world in 10 languages. In 15 stations with quizzes, coins and badges, kids discover what Sparly does, how it is built and how it keeps their data safe.</span>
-        <span data-lang="de">Eine spielerische Lernwelt in 10 Sprachen. In 15 Stationen mit Quiz, Münzen und Abzeichen entdecken Kinder, was Sparly kann, wie es gebaut ist und wie es ihre Daten schützt.</span>
-      </p>
+      <h2 data-i18n="lwTitle">How Sparly works, explained for kids</h2>
+      <p class="doc-description" data-i18n="lwDesc">A playful learning world in 10 languages. In 15 stations with quizzes, coins and badges, kids discover what Sparly does, how it is built and how it keeps their data safe.</p>
       <div class="doc-links">
-        <a data-lang="en" href="lernwelt/">Open the learning world</a>
-        <a data-lang="de" href="lernwelt/">Zur Lernwelt</a>
+        <a href="lernwelt/" data-i18n="lwLink">Open the learning world</a>
       </div>
     </div>
 
     <div class="doc-section doc-wide">
-      <h2>
-        <span data-lang="en">Sparly Escape: an escape game for kids</span>
-        <span data-lang="de">Sparly Escape: ein Escape-Spiel für Kinder</span>
-      </h2>
-      <p class="doc-description">
-        <span data-lang="en">Buggy the bug has locked kids inside the Sparly app. Five rooms of puzzles about balances, savings jars, databases, PIN protection and app updates, with hints so nobody gets stuck. About 30 to 45 minutes, in 10 languages.</span>
-        <span data-lang="de">Buggy, der Bug, hat Kinder in der Sparly-App eingesperrt. Fünf Räume voller Rätsel rund um Kontostand, Spargläser, Datenbank, PIN-Schutz und App-Updates, mit Tipps, damit niemand feststeckt. Etwa 30 bis 45 Minuten, in 10 Sprachen.</span>
-      </p>
+      <h2 data-i18n="escTitle">Sparly Escape: an escape game for kids</h2>
+      <p class="doc-description" data-i18n="escDesc">Buggy the bug has locked kids inside the Sparly app. Five rooms of puzzles about balances, savings jars, databases, PIN protection and app updates, with hints so nobody gets stuck. About 30 to 45 minutes, in 10 languages.</p>
       <div class="doc-links">
-        <a data-lang="en" href="escape/">Play Sparly Escape</a>
-        <a data-lang="de" href="escape/">Sparly Escape spielen</a>
+        <a href="escape/" data-i18n="escLink">Play Sparly Escape</a>
+      </div>
+    </div>
+
+    <!-- The legal pages are in German and English only: German links to German, every other language to English. -->
+    <div class="doc-section">
+      <h2 data-i18n="privacyTitle">Privacy Policy</h2>
+      <p class="doc-description" data-i18n="privacyDesc">Your data never leaves your device. Learn how Sparly keeps it private.</p>
+      <div class="doc-links">
+        <a href="privacy-policy.html?lang=en" data-legal="privacy-policy.html" data-i18n="privacyLink">Read Privacy Policy</a>
       </div>
     </div>
 
     <div class="doc-section">
-      <h2>
-        <span data-lang="en">Privacy Policy</span>
-        <span data-lang="de">Datenschutzerklärung</span>
-      </h2>
-      <p class="doc-description">
-        <span data-lang="en">Your data never leaves your device. Learn how Sparly keeps it private.</span>
-        <span data-lang="de">Ihre Daten verlassen niemals Ihr Gerät. Erfahren Sie, wie Sparly sie schützt.</span>
-      </p>
+      <h2 data-i18n="termsTitle">Terms of Service</h2>
+      <p class="doc-description" data-i18n="termsDesc">The terms under which you use Sparly.</p>
       <div class="doc-links">
-        <a data-lang="en" href="privacy-policy.html">Read Privacy Policy</a>
-        <a data-lang="de" href="privacy-policy.html">Datenschutzerklärung lesen</a>
-      </div>
-    </div>
-
-    <div class="doc-section">
-      <h2>
-        <span data-lang="en">Terms of Service</span>
-        <span data-lang="de">Nutzungsbedingungen</span>
-      </h2>
-      <p class="doc-description">
-        <span data-lang="en">The terms under which you use Sparly.</span>
-        <span data-lang="de">Die Bedingungen, unter denen Sie Sparly nutzen.</span>
-      </p>
-      <div class="doc-links">
-        <a data-lang="en" href="terms.html">Read Terms of Service</a>
-        <a data-lang="de" href="terms.html">Nutzungsbedingungen lesen</a>
+        <a href="terms.html?lang=en" data-legal="terms.html" data-i18n="termsLink">Read Terms of Service</a>
       </div>
     </div>
   </div>
 
   <footer>
     <p>
-      <span data-lang="en">Sparly is developed by Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germany.</span>
-      <span data-lang="de">Sparly wird entwickelt von der Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Deutschland.</span>
+      <span data-i18n="footer">Sparly is developed by Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germany.</span>
       <br>
-      <span data-lang="en">Contact:</span>
-      <span data-lang="de">Kontakt:</span>
+      <span data-i18n="contact">Contact:</span>
       <a href="mailto:contact@futuresq.com">contact@futuresq.com</a>
     </p>
   </footer>
@@ -364,33 +362,382 @@
   <script>
     (function () {
       var STORAGE_KEY = 'sparly-lang';
-      var supported = ['en', 'de'];
+
+      // The app's languages. Serbian Latin ('sr-Latn') is generated from the Cyrillic texts below, like in the app.
+      var TEXTS = {
+        en: {
+          title: 'Sparly – The pocket money app for kids',
+          language: 'Language',
+          iconAlt: 'Sparly app icon',
+          tagline: 'The pocket money app that helps kids learn to save',
+          intro: 'Kids track their income and spending, save up for their wishes and collect badges along the way. All data stays on your device: no cloud, no account, no tracking.',
+          private: '100% private',
+          free: 'Free',
+          noAds: 'No ads',
+          noIap: 'No in-app purchases',
+          languages: '10 languages',
+          shot1: 'Sparly app: pocket money overview with available balance, income and expenses',
+          shot2: 'Sparly app: wishes with savings goals',
+          shot3: 'Sparly app: review with savings, charts and tips',
+          shot4: 'Sparly app: collect badges as you save',
+          shot5: 'Sparly app: 100% private – no cloud, no account, no ads',
+          lwTitle: 'How Sparly works, explained for kids',
+          lwDesc: 'A playful learning world in 10 languages. In 15 stations with quizzes, coins and badges, kids discover what Sparly does, how it is built and how it keeps their data safe.',
+          lwLink: 'Open the learning world',
+          escTitle: 'Sparly Escape: an escape game for kids',
+          escDesc: 'Buggy the bug has locked kids inside the Sparly app. Five rooms of puzzles about balances, savings jars, databases, PIN protection and app updates, with hints so nobody gets stuck. About 30 to 45 minutes, in 10 languages.',
+          escLink: 'Play Sparly Escape',
+          privacyTitle: 'Privacy Policy',
+          privacyDesc: 'Your data never leaves your device. Learn how Sparly keeps it private.',
+          privacyLink: 'Read Privacy Policy',
+          termsTitle: 'Terms of Service',
+          termsDesc: 'The terms under which you use Sparly.',
+          termsLink: 'Read Terms of Service',
+          footer: 'Sparly is developed by Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germany.',
+          contact: 'Contact:'
+        },
+        de: {
+          title: 'Sparly – Die Taschengeld-App für Kinder',
+          language: 'Sprache',
+          iconAlt: 'Sparly App-Icon',
+          tagline: 'Die Taschengeld-App, mit der Kinder sparen lernen',
+          intro: 'Kinder behalten Einnahmen und Ausgaben im Blick, sparen auf ihre Wünsche und sammeln dabei Abzeichen. Alle Daten bleiben auf Ihrem Gerät: keine Cloud, kein Konto, kein Tracking.',
+          private: '100 % privat',
+          free: 'Kostenlos',
+          noAds: 'Keine Werbung',
+          noIap: 'Keine In-App-Käufe',
+          languages: '10 Sprachen',
+          lwTitle: 'So funktioniert Sparly, erklärt für Kinder',
+          lwDesc: 'Eine spielerische Lernwelt in 10 Sprachen. In 15 Stationen mit Quiz, Münzen und Abzeichen entdecken Kinder, was Sparly kann, wie es gebaut ist und wie es ihre Daten schützt.',
+          lwLink: 'Zur Lernwelt',
+          escTitle: 'Sparly Escape: ein Escape-Spiel für Kinder',
+          escDesc: 'Buggy, der Bug, hat Kinder in der Sparly-App eingesperrt. Fünf Räume voller Rätsel rund um Kontostand, Spargläser, Datenbank, PIN-Schutz und App-Updates, mit Tipps, damit niemand feststeckt. Etwa 30 bis 45 Minuten, in 10 Sprachen.',
+          escLink: 'Sparly Escape spielen',
+          privacyTitle: 'Datenschutzerklärung',
+          privacyDesc: 'Ihre Daten verlassen niemals Ihr Gerät. Erfahren Sie, wie Sparly sie schützt.',
+          privacyLink: 'Datenschutzerklärung lesen',
+          termsTitle: 'Nutzungsbedingungen',
+          termsDesc: 'Die Bedingungen, unter denen Sie Sparly nutzen.',
+          termsLink: 'Nutzungsbedingungen lesen',
+          footer: 'Sparly wird entwickelt von der Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Deutschland.',
+          contact: 'Kontakt:'
+        },
+        tr: {
+          title: 'Sparly – Çocuklar için harçlık uygulaması',
+          language: 'Dil',
+          iconAlt: 'Sparly uygulama simgesi',
+          tagline: 'Çocukların biriktirmeyi öğrendiği harçlık uygulaması',
+          intro: 'Çocuklar gelirlerini ve harcamalarını takip eder, dilekleri için para biriktirir ve bu sırada rozet toplar. Tüm veriler cihazınızda kalır: bulut yok, hesap yok, takip yok.',
+          private: '%100 gizli',
+          free: 'Ücretsiz',
+          noAds: 'Reklamsız',
+          noIap: 'Uygulama içi satın alma yok',
+          languages: '10 dil',
+          shot1: 'Sparly uygulaması: kullanılabilir bakiye, gelir ve giderlerle harçlık özeti',
+          shot2: 'Sparly uygulaması: tasarruf hedefli dilekler',
+          shot3: 'Sparly uygulaması: birikimler, grafikler ve ipuçlarıyla özet',
+          shot4: 'Sparly uygulaması: biriktirdikçe rozet topla',
+          shot5: 'Sparly uygulaması: %100 gizli – bulut yok, hesap yok, reklam yok',
+          lwTitle: 'Sparly nasıl çalışır, çocuklar için anlatıldı',
+          lwDesc: '10 dilde eğlenceli bir öğrenme dünyası. Quiz, jeton ve rozetli 15 istasyonda çocuklar Sparly\'nin neler yaptığını, nasıl yapıldığını ve verilerini nasıl koruduğunu keşfeder.',
+          lwLink: 'Öğrenme dünyasını aç',
+          escTitle: 'Sparly Escape: çocuklar için bir kaçış oyunu',
+          escDesc: 'Böcek Buggy çocukları Sparly uygulamasının içine kilitledi. Bakiye, kumbara kavanozları, veritabanları, PIN koruması ve uygulama güncellemeleri üzerine bulmacalarla dolu beş oda; kimse takılmasın diye ipuçlarıyla. Yaklaşık 30–45 dakika, 10 dilde.',
+          escLink: 'Sparly Escape\'i oyna',
+          privacyTitle: 'Gizlilik Politikası',
+          privacyDesc: 'Verileriniz cihazınızdan asla çıkmaz. Sparly\'nin onları nasıl koruduğunu öğrenin.',
+          privacyLink: 'Gizlilik politikasını okuyun (İngilizce)',
+          termsTitle: 'Kullanım Koşulları',
+          termsDesc: 'Sparly\'yi hangi koşullarla kullandığınız.',
+          termsLink: 'Kullanım koşullarını okuyun (İngilizce)',
+          footer: 'Sparly, Almanya\'nın Leinfelden-Echterdingen şehrindeki Futuresq UG (haftungsbeschränkt) tarafından geliştirilmektedir.',
+          contact: 'İletişim:'
+        },
+        ro: {
+          title: 'Sparly – Aplicația de bani de buzunar pentru copii',
+          language: 'Limbă',
+          iconAlt: 'Pictograma aplicației Sparly',
+          tagline: 'Aplicația de bani de buzunar cu care copiii învață să economisească',
+          intro: 'Copiii își urmăresc veniturile și cheltuielile, economisesc pentru dorințele lor și adună insigne pe parcurs. Toate datele rămân pe dispozitivul dumneavoastră: fără cloud, fără cont, fără urmărire.',
+          private: '100% privat',
+          free: 'Gratuit',
+          noAds: 'Fără reclame',
+          noIap: 'Fără achiziții în aplicație',
+          languages: '10 limbi',
+          lwTitle: 'Cum funcționează Sparly, explicat pentru copii',
+          lwDesc: 'O lume de învățare jucăușă în 10 limbi. În 15 stații cu quizuri, monede și insigne, copiii descoperă ce face Sparly, cum e construit și cum le protejează datele.',
+          lwLink: 'Deschide lumea de învățare',
+          escTitle: 'Sparly Escape: un joc de evadare pentru copii',
+          escDesc: 'Buggy, gândăcelul, i-a încuiat pe copii în aplicația Sparly. Cinci camere cu ghicitori despre sold, borcane de economii, baze de date, protecția cu PIN și actualizări, cu indicii ca nimeni să nu se blocheze. Cam 30–45 de minute, în 10 limbi.',
+          escLink: 'Joacă Sparly Escape',
+          privacyTitle: 'Politica de confidențialitate',
+          privacyDesc: 'Datele dumneavoastră nu părăsesc niciodată dispozitivul. Aflați cum le protejează Sparly.',
+          privacyLink: 'Citiți politica de confidențialitate (în engleză)',
+          termsTitle: 'Termeni și condiții',
+          termsDesc: 'Condițiile în care folosiți Sparly.',
+          termsLink: 'Citiți termenii și condițiile (în engleză)',
+          footer: 'Sparly este dezvoltat de Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germania.',
+          contact: 'Contact:'
+        },
+        fr: {
+          title: 'Sparly – L\'appli d\'argent de poche pour les enfants',
+          language: 'Langue',
+          iconAlt: 'Icône de l\'appli Sparly',
+          tagline: 'L\'appli d\'argent de poche qui apprend aux enfants à épargner',
+          intro: 'Les enfants suivent leurs revenus et leurs dépenses, économisent pour leurs souhaits et gagnent des badges en chemin. Toutes les données restent sur votre appareil : pas de cloud, pas de compte, pas de pistage.',
+          private: '100 % privée',
+          free: 'Gratuite',
+          noAds: 'Sans publicité',
+          noIap: 'Sans achats intégrés',
+          languages: '10 langues',
+          shot1: 'Appli Sparly : l\'argent de poche en un coup d\'œil, avec le solde disponible, les revenus et les dépenses',
+          shot2: 'Appli Sparly : souhaits avec objectifs d\'épargne',
+          shot3: 'Appli Sparly : bilan avec économies, graphiques et conseils',
+          shot4: 'Appli Sparly : gagner des badges en épargnant',
+          shot5: 'Appli Sparly : 100 % privée – pas de cloud, pas de compte, pas de publicité',
+          lwTitle: 'Comment fonctionne Sparly, expliqué aux enfants',
+          lwDesc: 'Un parcours découverte ludique en 10 langues. En 15 stations avec des quiz, des pièces et des badges, les enfants découvrent ce que fait Sparly, comment elle est construite et comment elle protège leurs données.',
+          lwLink: 'Ouvrir le parcours découverte',
+          escTitle: 'Sparly Escape : un escape game pour les enfants',
+          escDesc: 'Buggy, le bug, a enfermé des enfants dans l\'appli Sparly. Cinq salles d\'énigmes sur le solde, les bocaux d\'épargne, les bases de données, la protection par code PIN et les mises à jour, avec des indices pour que personne ne reste bloqué. Environ 30 à 45 minutes, en 10 langues.',
+          escLink: 'Jouer à Sparly Escape',
+          privacyTitle: 'Politique de confidentialité',
+          privacyDesc: 'Vos données ne quittent jamais votre appareil. Découvrez comment Sparly les protège.',
+          privacyLink: 'Lire la politique de confidentialité (en anglais)',
+          termsTitle: 'Conditions d\'utilisation',
+          termsDesc: 'Les conditions dans lesquelles vous utilisez Sparly.',
+          termsLink: 'Lire les conditions d\'utilisation (en anglais)',
+          footer: 'Sparly est développée par Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Allemagne.',
+          contact: 'Contact :'
+        },
+        pl: {
+          title: 'Sparly – aplikacja do kieszonkowego dla dzieci',
+          language: 'Język',
+          iconAlt: 'Ikona aplikacji Sparly',
+          tagline: 'Aplikacja do kieszonkowego, dzięki której dzieci uczą się oszczędzać',
+          intro: 'Dzieci śledzą swoje przychody i wydatki, oszczędzają na swoje marzenia i po drodze zbierają odznaki. Wszystkie dane zostają na Twoim urządzeniu: bez chmury, bez konta, bez śledzenia.',
+          private: 'W 100% prywatna',
+          free: 'Bezpłatna',
+          noAds: 'Bez reklam',
+          noIap: 'Bez zakupów w aplikacji',
+          languages: '10 języków',
+          shot1: 'Aplikacja Sparly: przegląd kieszonkowego z dostępnym saldem, przychodami i wydatkami',
+          shot2: 'Aplikacja Sparly: życzenia z celami oszczędnościowymi',
+          shot3: 'Aplikacja Sparly: przegląd oszczędności z wykresami i wskazówkami',
+          shot4: 'Aplikacja Sparly: zbieraj odznaki, oszczędzając',
+          shot5: 'Aplikacja Sparly: w 100% prywatna – bez chmury, bez konta, bez reklam',
+          lwTitle: 'Jak działa Sparly – wyjaśnione dla dzieci',
+          lwDesc: 'Zabawny świat nauki w 10 językach. Na 15 stacjach z quizami, monetami i odznakami dzieci odkrywają, co potrafi Sparly, jak jest zbudowany i jak chroni ich dane.',
+          lwLink: 'Otwórz świat nauki',
+          escTitle: 'Sparly Escape: gra typu escape room dla dzieci',
+          escDesc: 'Robaczek Buggy zamknął dzieci w aplikacji Sparly. Pięć pokoi pełnych zagadek o saldzie, słoikach na oszczędności, bazach danych, ochronie PIN-em i aktualizacjach, z podpowiedziami, żeby nikt nie utknął. Około 30–45 minut, w 10 językach.',
+          escLink: 'Zagraj w Sparly Escape',
+          privacyTitle: 'Polityka prywatności',
+          privacyDesc: 'Twoje dane nigdy nie opuszczają Twojego urządzenia. Dowiedz się, jak Sparly je chroni.',
+          privacyLink: 'Przeczytaj politykę prywatności (po angielsku)',
+          termsTitle: 'Regulamin',
+          termsDesc: 'Zasady, na jakich korzystasz ze Sparly.',
+          termsLink: 'Przeczytaj regulamin (po angielsku)',
+          footer: 'Sparly tworzy Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Niemcy.',
+          contact: 'Kontakt:'
+        },
+        es: {
+          title: 'Sparly – La app de la paga para niños',
+          language: 'Idioma',
+          iconAlt: 'Icono de la app Sparly',
+          tagline: 'La app de la paga con la que los niños aprenden a ahorrar',
+          intro: 'Los niños controlan sus ingresos y gastos, ahorran para sus deseos y consiguen medallas por el camino. Todos los datos se quedan en tu dispositivo: sin nube, sin cuenta, sin rastreo.',
+          private: '100 % privada',
+          free: 'Gratis',
+          noAds: 'Sin anuncios',
+          noIap: 'Sin compras dentro de la app',
+          languages: '10 idiomas',
+          shot1: 'App Sparly: resumen de la paga con saldo disponible, ingresos y gastos',
+          shot2: 'App Sparly: deseos con metas de ahorro',
+          shot3: 'App Sparly: resumen con ahorros, gráficos y consejos',
+          shot4: 'App Sparly: consigue medallas mientras ahorras',
+          shot5: 'App Sparly: 100 % privada – sin nube, sin cuenta, sin anuncios',
+          lwTitle: 'Cómo funciona Sparly, explicado para niños',
+          lwDesc: 'Un mundo de aprendizaje divertido en 10 idiomas. En 15 estaciones con quiz, monedas y medallas, los niños descubren qué hace Sparly, cómo se construyó y cómo protege sus datos.',
+          lwLink: 'Abrir el mundo de aprendizaje',
+          escTitle: 'Sparly Escape: un juego de escape para niños',
+          escDesc: 'Buggy, el bicho, ha encerrado a unos niños dentro de la app Sparly. Cinco salas de acertijos sobre el saldo, los botes de ahorro, las bases de datos, la protección con PIN y las actualizaciones, con pistas para que nadie se atasque. Unos 30 a 45 minutos, en 10 idiomas.',
+          escLink: 'Jugar a Sparly Escape',
+          privacyTitle: 'Política de privacidad',
+          privacyDesc: 'Tus datos nunca salen de tu dispositivo. Descubre cómo Sparly los protege.',
+          privacyLink: 'Leer la política de privacidad (en inglés)',
+          termsTitle: 'Condiciones de uso',
+          termsDesc: 'Las condiciones en las que usas Sparly.',
+          termsLink: 'Leer las condiciones de uso (en inglés)',
+          footer: 'Sparly está desarrollada por Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Alemania.',
+          contact: 'Contacto:'
+        },
+        it: {
+          title: 'Sparly – L\'app della paghetta per bambini',
+          language: 'Lingua',
+          iconAlt: 'Icona dell\'app Sparly',
+          tagline: 'L\'app della paghetta che insegna ai bambini a risparmiare',
+          intro: 'I bambini tengono traccia di entrate e uscite, risparmiano per i loro desideri e raccolgono medaglie lungo la strada. Tutti i dati restano sul tuo dispositivo: niente cloud, niente account, niente tracciamento.',
+          private: '100% privata',
+          free: 'Gratis',
+          noAds: 'Senza pubblicità',
+          noIap: 'Senza acquisti in-app',
+          languages: '10 lingue',
+          shot1: 'App Sparly: panoramica della paghetta con saldo disponibile, entrate e uscite',
+          shot2: 'App Sparly: desideri con obiettivi di risparmio',
+          shot3: 'App Sparly: riepilogo con risparmi, grafici e consigli',
+          shot4: 'App Sparly: raccogli medaglie mentre risparmi',
+          shot5: 'App Sparly: 100% privata – niente cloud, niente account, niente pubblicità',
+          lwTitle: 'Come funziona Sparly, spiegato ai bambini',
+          lwDesc: 'Un mondo per imparare giocando, in 10 lingue. In 15 tappe con quiz, monete e medaglie i bambini scoprono cosa fa Sparly, come è costruita e come protegge i loro dati.',
+          lwLink: 'Apri il mondo per imparare',
+          escTitle: 'Sparly Escape: un escape game per bambini',
+          escDesc: 'Buggy, il bug, ha chiuso dei bambini dentro l\'app Sparly. Cinque stanze di enigmi su saldo, barattoli del risparmio, database, protezione con PIN e aggiornamenti dell\'app, con suggerimenti perché nessuno resti bloccato. Circa 30–45 minuti, in 10 lingue.',
+          escLink: 'Gioca a Sparly Escape',
+          privacyTitle: 'Informativa sulla privacy',
+          privacyDesc: 'I tuoi dati non lasciano mai il tuo dispositivo. Scopri come Sparly li protegge.',
+          privacyLink: 'Leggi l\'informativa sulla privacy (in inglese)',
+          termsTitle: 'Termini di servizio',
+          termsDesc: 'Le condizioni con cui usi Sparly.',
+          termsLink: 'Leggi i termini di servizio (in inglese)',
+          footer: 'Sparly è sviluppata da Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Germania.',
+          contact: 'Contatti:'
+        },
+        cs: {
+          title: 'Sparly – Aplikace na kapesné pro děti',
+          language: 'Jazyk',
+          iconAlt: 'Ikona aplikace Sparly',
+          tagline: 'Aplikace na kapesné, se kterou se děti učí šetřit',
+          intro: 'Děti si zapisují příjmy a výdaje, šetří na svá přání a cestou sbírají odznaky. Všechna data zůstávají ve vašem zařízení: žádný cloud, žádný účet, žádné sledování.',
+          private: '100% soukromí',
+          free: 'Zdarma',
+          noAds: 'Bez reklam',
+          noIap: 'Bez nákupů v aplikaci',
+          languages: '10 jazyků',
+          shot1: 'Aplikace Sparly: přehled kapesného s dostupným zůstatkem, příjmy a výdaji',
+          shot2: 'Aplikace Sparly: přání se spořicími cíli',
+          shot3: 'Aplikace Sparly: přehled úspor s grafy a tipy',
+          shot4: 'Aplikace Sparly: sbírej odznaky, když šetříš',
+          shot5: 'Aplikace Sparly: 100% soukromí – žádný cloud, žádný účet, žádné reklamy',
+          lwTitle: 'Jak funguje Sparly, vysvětleno pro děti',
+          lwDesc: 'Hravý výukový svět v 10 jazycích. Na 15 stanovištích s kvízy, mincemi a odznaky děti zjistí, co Sparly umí, jak je postavený a jak chrání jejich data.',
+          lwLink: 'Otevřít výukový svět',
+          escTitle: 'Sparly Escape: úniková hra pro děti',
+          escDesc: 'Bug Buggy zamkl děti v aplikaci Sparly. Pět místností plných hádanek o zůstatku, spořicích sklenicích, databázích, ochraně PINem a aktualizacích aplikace, s nápovědami, aby se nikdo nezasekl. Zhruba 30 až 45 minut, v 10 jazycích.',
+          escLink: 'Hrát Sparly Escape',
+          privacyTitle: 'Zásady ochrany osobních údajů',
+          privacyDesc: 'Vaše data nikdy neopustí vaše zařízení. Zjistěte, jak je Sparly chrání.',
+          privacyLink: 'Přečíst zásady ochrany osobních údajů (anglicky)',
+          termsTitle: 'Podmínky použití',
+          termsDesc: 'Podmínky, za kterých Sparly používáte.',
+          termsLink: 'Přečíst podmínky použití (anglicky)',
+          footer: 'Sparly vyvíjí Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Německo.',
+          contact: 'Kontakt:'
+        },
+        sr: {
+          title: 'Sparly – Апликација за џепарац за децу',
+          language: 'Језик',
+          iconAlt: 'Икона апликације Sparly',
+          tagline: 'Апликација за џепарац уз коју деца уче да штеде',
+          intro: 'Деца прате своје приходе и трошкове, штеде за своје жеље и успут скупљају значке. Сви подаци остају на вашем уређају: без облака, без налога, без праћења.',
+          private: '100% приватно',
+          free: 'Бесплатно',
+          noAds: 'Без реклама',
+          noIap: 'Без куповина у апликацији',
+          languages: '10 језика',
+          shot1: 'Апликација Sparly: преглед џепарца са доступним стањем, приходима и трошковима',
+          shot2: 'Апликација Sparly: жеље са циљевима штедње',
+          shot3: 'Апликација Sparly: преглед уштеђевине са графиконима и саветима',
+          shot4: 'Апликација Sparly: скупљај значке док штедиш',
+          shot5: 'Апликација Sparly: 100% приватно – без облака, без налога, без реклама',
+          lwTitle: 'Како ради Sparly, објашњено за децу',
+          lwDesc: 'Забаван свет учења на 10 језика. На 15 станица са квизовима, новчићима и значкама деца откривају шта Sparly ради, како је направљен и како чува њихове податке.',
+          lwLink: 'Отвори свет учења',
+          escTitle: 'Sparly Escape: игра бекства за децу',
+          escDesc: 'Баг Buggy је закључао децу у апликацији Sparly. Пет соба пуних загонетки о стању, теглама за штедњу, базама података, заштити ПИН-ом и ажурирањима апликације, са саветима да нико не заглави. Око 30 до 45 минута, на 10 језика.',
+          escLink: 'Играј Sparly Escape',
+          privacyTitle: 'Политика приватности',
+          privacyDesc: 'Ваши подаци никада не напуштају ваш уређај. Сазнајте како их Sparly штити.',
+          privacyLink: 'Прочитајте политику приватности (на енглеском)',
+          termsTitle: 'Услови коришћења',
+          termsDesc: 'Услови под којима користите Sparly.',
+          termsLink: 'Прочитајте услове коришћења (на енглеском)',
+          footer: 'Sparly развија Futuresq UG (haftungsbeschränkt), Leinfelden-Echterdingen, Немачка.',
+          contact: 'Контакт:'
+        }
+      };
+
+      // Serbian Latin from Serbian Cyrillic, letter for letter, as in the app and the games.
+      var SR_LATIN = {
+        а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', ђ: 'đ', е: 'e', ж: 'ž', з: 'z', и: 'i',
+        ј: 'j', к: 'k', л: 'l', љ: 'lj', м: 'm', н: 'n', њ: 'nj', о: 'o', п: 'p', р: 'r',
+        с: 's', т: 't', ћ: 'ć', у: 'u', ф: 'f', х: 'h', ц: 'c', ч: 'č', џ: 'dž', ш: 'š'
+      };
+      function isLetter(ch) { return !!ch && ch.toLowerCase() !== ch.toUpperCase(); }
+      function isUpper(ch) { return isLetter(ch) && ch === ch.toUpperCase(); }
+      function toSerbianLatin(text) {
+        var chars = Array.from(text);
+        return chars.map(function (ch, i) {
+          var lower = ch.toLowerCase();
+          var latin = SR_LATIN[lower];
+          if (latin === undefined) return ch;
+          if (ch === lower) return latin;
+          var next = chars[i + 1];
+          var allCaps = isUpper(next) || (!isLetter(next) && isUpper(chars[i - 1]));
+          return allCaps ? latin.toUpperCase() : latin.charAt(0).toUpperCase() + latin.slice(1);
+        }).join('');
+      }
+      TEXTS['sr-Latn'] = {};
+      Object.keys(TEXTS.sr).forEach(function (k) { TEXTS['sr-Latn'][k] = toSerbianLatin(TEXTS.sr[k]); });
+
+      var select = document.getElementById('lang-select');
 
       function detectLang() {
-        var stored = localStorage.getItem(STORAGE_KEY);
-        if (stored && supported.indexOf(stored) !== -1) return stored;
-        var browser = (navigator.language || 'en').slice(0, 2).toLowerCase();
-        return supported.indexOf(browser) !== -1 ? browser : 'en';
+        var stored = null;
+        try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { /* storage blocked */ }
+        if (stored && TEXTS[stored]) return stored;
+        var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+        for (var i = 0; i < list.length; i++) {
+          var base = String(list[i]).split(/[-_]/)[0].toLowerCase();
+          if (base === 'sr') return /latn/i.test(list[i]) ? 'sr-Latn' : 'sr';
+          if (TEXTS[base]) return base;
+        }
+        return 'en';
       }
 
-      function applyLang(lang) {
+      function applyLang(lang, remember) {
+        var t = TEXTS[lang];
+        var assets = lang === 'de' ? 'de' : 'en';
+        var shots = lang === 'de' || lang === 'ro' ? lang : 'en';
         document.documentElement.lang = lang;
-        document.querySelectorAll('[data-lang]').forEach(function (el) {
-          el.classList.toggle('active-lang', el.getAttribute('data-lang') === lang);
+        document.title = t.title;
+        select.value = lang;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var v = t[el.getAttribute('data-i18n')] || TEXTS.en[el.getAttribute('data-i18n')];
+          el.textContent = v;
         });
-        document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+        document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+          el.alt = t[el.getAttribute('data-i18n-alt')] || TEXTS.en[el.getAttribute('data-i18n-alt')];
         });
-        localStorage.setItem(STORAGE_KEY, lang);
+        document.querySelectorAll('[data-assets]').forEach(function (el) {
+          el.hidden = el.getAttribute('data-assets') !== assets;
+        });
+        document.querySelectorAll('[data-shots]').forEach(function (el) {
+          el.hidden = el.getAttribute('data-shots') !== shots;
+        });
+        document.querySelectorAll('[data-legal]').forEach(function (el) {
+          el.href = el.getAttribute('data-legal') + '?lang=' + (lang === 'de' ? 'de' : 'en');
+        });
+        document.querySelectorAll('[data-play]').forEach(function (el) {
+          el.href = 'https://play.google.com/store/apps/details?id=com.futuresq.sparly&hl=' + lang.split('-')[0];
+        });
+        if (remember) {
+          try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* storage blocked */ }
+        }
       }
 
-      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          applyLang(btn.getAttribute('data-set-lang'));
-        });
-      });
-
-      applyLang(detectLang());
+      select.addEventListener('change', function () { applyLang(select.value, true); });
+      applyLang(detectLang(), false);
     })();
   </script>
 </body>
