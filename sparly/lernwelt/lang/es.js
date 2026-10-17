@@ -77,6 +77,7 @@ Lern.lang("es", {
   "ui.newWordsHint": "Cuando completes la estación, irán a tu glosario.",
   "ui.doneText": "¡Estación completada! Aquí tienes %{n} de 3 estrellas.",
   "ui.donePerfectHint": "Vuelve a jugar el quiz sin ningún fallo para conseguir la estrella de pleno.",
+  "ui.doneTaskHint": "Para conseguir otra estrella, completa la misión en «%{step}».",
   "ui.nextStation": "Siguiente estación",
   "ui.toExam": "Ir al examen de maestro",
   "ui.readyText": "¡Todas las preguntas hechas! Completa la estación y llévate 25 monedas.",
@@ -144,7 +145,7 @@ Lern.lang("es", {
   "world.1.sub": "Lo que la app hace por ti: anotar dinero, ahorrar, ver gráficos y coleccionar medallas.",
   "world.2.tag": "Mundo 2 · Tecnología",
   "world.2.title": "Cómo está construida Sparly",
-  "world.2.sub": "Un vistazo bajo el capó: piezas, la base de datos, contar en céntimos y ocho idiomas.",
+  "world.2.sub": "Un vistazo bajo el capó: piezas, la base de datos, contar en céntimos y diez idiomas.",
   "world.3.tag": "Mundo 3 · Calidad",
   "world.3.title": "Qué hace de Sparly una buena app",
   "world.3.sub": "Seguridad, pruebas, velocidad, facilidad de uso y el camino hasta la tienda de apps. Los expertos lo llaman «requisitos no funcionales».",
@@ -172,7 +173,7 @@ Lern.lang("es", {
   "badge.paket.name": "Mensajero",
   "badge.paket.desc": "Has ordenado bien el viaje de una anotación",
   "badge.weltenbummler.name": "Trotamundos",
-  "badge.weltenbummler.desc": "Has visto Sparly en los 8 idiomas",
+  "badge.weltenbummler.desc": "Has visto Sparly en los 10 idiomas",
   "badge.welt2.name": "Maestro de obras",
   "badge.welt2.desc": "Has completado todas las estaciones del mundo 2",
   "badge.hacker.name": "Escudo antihackers",
@@ -205,24 +206,24 @@ Lern.lang("es", {
 
   /* ---------- Station 1 ---------- */
   "s.start.title": "Esto es Sparly",
-  "s.start.short": "La app y sus cinco pestañas",
+  "s.start.short": "La app y sus cuatro pestañas",
   "s.start.lead": "Una app que ayuda a niños y niñas a controlar su paga y a ahorrar para sus deseos.",
-  "s.start.challenge": "Toca las 5 pestañas del móvil",
+  "s.start.challenge": "Toca las 4 pestañas y el botón ➕ del móvil",
   "s.start.learn": [
     "p|Sparly es una app para tu móvil. Con ella, niños y niñas anotan cuánto dinero reciben y en qué lo gastan. Así siempre ven cuánto les queda y pueden ahorrar para las cosas que desean.",
     "p|Sparly está hecha para niños y niñas de entre <strong>9 y 16 años</strong>. Funciona en iPhone, en iPad y en móviles y tabletas Android.",
     "fakt|Sparly funciona totalmente <strong>sin internet</strong>. Todo lo que escribes se queda en tu móvil. Los expertos lo llaman <em>offline-first</em>.",
-    "p|En la parte de abajo de la app hay una barra con cinco botones. Se llaman <strong>pestañas</strong>. Cada pestaña lleva a una zona distinta:",
+    "p|En la parte de abajo de la app hay una barra con cinco botones: cuatro <strong>pestañas</strong> y un gran botón redondo en el centro. Cada pestaña lleva a una zona distinta:",
     "li|💰 <strong>Dinero</strong>: tu saldo y tus últimos ingresos y gastos",
     "li|📊 <strong>Resumen</strong>: gráficos que muestran adónde ha ido tu dinero",
-    "li|➕ <strong>Nuevo</strong>: el gran botón redondo del centro para añadir algo nuevo",
+    "li|➕ <strong>Nuevo</strong>: el gran botón redondo del centro. No es una pestaña: abre un menú para añadir algo nuevo",
     "li|⭐ <strong>Deseos</strong>: tu lista de deseos y tus metas de ahorro",
     "li|🏆 <strong>Medallas</strong>: tu colección de premios",
-    "stell|Sparly es como una casa con cinco habitaciones. La barra de pestañas es el pasillo: desde ahí llegas a cada habitación. El gran botón del centro es la puerta de entrada por la que llega todo lo nuevo.",
+    "stell|Sparly es como una casa con cuatro habitaciones. La barra de pestañas es el pasillo: desde ahí llegas a cada habitación. El gran botón del centro es la puerta de entrada por la que llega todo lo nuevo.",
     "@pro"
   ],
   "s.start.pro.tabs.title": "Así es la barra de pestañas en el código",
-  "s.start.pro.tabs.note": "Cada pestaña tiene un emoji y una clave para su nombre. Los caracteres raros como \\uD83D\\uDCB0 son el código secreto del ordenador para el emoji 💰. Qué es una clave lo aprenderás en la estación 10.",
+  "s.start.pro.tabs.note": "Cada pestaña y el botón ➕ tienen un emoji y una clave para su nombre. Los caracteres raros como \\uD83D\\uDCB0 son el código secreto del ordenador para el emoji 💰. Qué es una clave lo aprenderás en la estación 10.",
   "s.start.info.money": "La pantalla de inicio. Arriba ves tu saldo; debajo, tus últimos gastos e ingresos, tu próxima medalla y el consejo de ahorro del día.",
   "s.start.info.review": "Los gráficos te muestran cuánto dinero ha entrado y en qué lo has gastado. Puedes cambiar entre semana, mes, año y todo el tiempo.",
   "s.start.info.new": "El gran botón redondo abre un menú con tres opciones: ingreso, gasto o un nuevo deseo.",
@@ -230,7 +231,7 @@ Lern.lang("es", {
   "s.start.info.badges": "Las 23 medallas de Sparly. Las que has ganado brillan en color; las demás están en gris y te dicen qué te falta.",
   "s.start.ui.visited": "Ya visitada",
   "s.start.quiz": [
-    { "q": "¿Cuántas pestañas hay en la barra de abajo de Sparly?", "o": ["3", "5", "7", "10"], "why": "Dinero, Resumen, Nuevo, Deseos y Medallas." },
+    { "q": "¿Cuántas pestañas hay en la barra de abajo de Sparly?", "o": ["3", "4", "5", "6"], "why": "Dinero, Resumen, Deseos y Medallas. El ➕ del centro no es una pestaña, sino un botón." },
     { "q": "¿Qué se abre al tocar el gran ➕ del centro?", "o": ["Los ajustes", "Un menú: ingreso, gasto o nuevo deseo", "Un juego", "La tienda de apps"], "why": "Todo lo nuevo lo añades con el ➕." },
     { "q": "Sparly necesita internet para funcionar.", "why": "Sparly es offline-first. Todo funciona directamente en el móvil." },
     { "q": "¿Para quién está hecha Sparly?", "o": ["Para bancos", "Para niños y niñas de 9 a 16 años", "Solo para adultos", "Para profes"] }
@@ -311,7 +312,7 @@ Lern.lang("es", {
   "s.wuensche.quiz": [
     { "q": "Tienes %{m:5000} en tu cuenta y has asignado %{m:2000} a tu meta de ahorro. ¿Cuánto dinero tienes todavía <strong>disponible</strong>?", "why": "%{m:5000} − %{m:2000} = %{m:3000}. El dinero asignado sigue siendo tuyo; solo está apartado." },
     { "q": "Un set de Lego cuesta %{m:6000}. Lo quieres dentro de 3 meses. ¿Cuánto tienes que ahorrar cada mes?", "why": "%{m:6000} entre 3 meses = %{m:2000} al mes." },
-    { "q": "¿Qué pasa con el dinero ahorrado si borras una meta de ahorro?", "o": ["Desaparece", "Vuelve a estar disponible", "Se lo quedan tus padres", "Se duplica"], "why": "El dinero sale del bote y vuelve a tu dinero disponible." },
+    { "q": "¿Qué pasa con el dinero ahorrado si borras una meta de ahorro que aún no se ha cumplido?", "o": ["Desaparece", "Vuelve a estar disponible", "Se lo quedan tus padres", "Se duplica"], "why": "El dinero sale del bote y vuelve a tu dinero disponible." },
     { "q": "El dinero asignado a una meta de ahorro ya no es tuyo.", "why": "Sigue siendo tuyo y cuenta en tu saldo. Solo está apartado." }
   ],
   "s.wuensche.words": [
@@ -445,7 +446,7 @@ Lern.lang("es", {
     "El lenguaje de programación de Sparly. Se asegura de que no mezcles peras con manzanas.",
     "Una pequeña base de datos que vive directamente en el móvil.",
     "Sí, de verdad se llama así: ¡es la palabra alemana para «estado»! Se encarga de la memoria de la app, los stores.",
-    "Se encarga de los ocho idiomas.",
+    "Se encarga de los diez idiomas.",
     "Hace que las animaciones sean fluidas, como la de la batería del ahorro."
   ],
   "s.bausteine.pro.ts.title": "Cómo vigila TypeScript los errores",
@@ -545,7 +546,7 @@ Lern.lang("es", {
     "p|Casi 0,3, pero no del todo. Con el dinero eso sería un fastidio: después de muchas anotaciones, de repente podría faltar o sobrar un céntimo. Por eso Sparly guarda cada cantidad como un <strong>número entero de céntimos</strong>. %{m:350} se convierte en 350. Con números enteros, el ordenador siempre calcula de forma exacta.",
     "formula|<span>%{m:350}</span><span>→ × 100 →</span><strong>350 céntimos</strong>",
     "p|Justo antes de que la cantidad aparezca en la pantalla, Sparly la vuelve a convertir en «%{m:350}». Eso se llama <strong>formatear</strong>.",
-    "p|Sparly puede mostrar <strong>7 monedas</strong>: euro, dólar estadounidense, libra esterlina, franco suizo, złoty polaco, leu rumano y lira turca.",
+    "p|Sparly puede mostrar <strong>9 monedas</strong>: euro, dólar estadounidense, libra esterlina, franco suizo, złoty polaco, leu rumano, lira turca, corona checa y dinar serbio.",
     "merke|¡Sparly <strong>no convierte</strong> el dinero! Si cambias de euros a dólares, 10 € se convierten simplemente en 10 $. El número guardado sigue siendo 1000; solo cambia el símbolo. Para la paga eso es justo lo correcto, porque tu dinero ya está en tu propia moneda.",
     "fakt|La cantidad más grande que acepta Sparly es %{n:100000000}: cien millones. Para la paga debería bastar 😄",
     "@pro"
@@ -619,12 +620,12 @@ Lern.lang("es", {
   ],
 
   /* ---------- Station 10 ---------- */
-  "s.sprachen.title": "Sparly habla 8 idiomas",
+  "s.sprachen.title": "Sparly habla 10 idiomas",
   "s.sprachen.short": "Claves en vez de textos fijos",
   "s.sprachen.lead": "Cómo aprende una app a hablar alemán, turco y rumano a la vez.",
-  "s.sprachen.challenge": "Mira Sparly en los 8 idiomas",
+  "s.sprachen.challenge": "Mira Sparly en los 10 idiomas",
   "s.sprachen.learn": [
-    "p|Sparly está en <strong>alemán, inglés, turco, rumano, francés, polaco, español e italiano</strong>. La primerísima vez que se abre, la app te pide «Elegir idioma». ¡Igual que este mundo de aprendizaje!",
+    "p|Sparly está en <strong>alemán, inglés, turco, rumano, francés, polaco, español, italiano, checo y serbio</strong> (en alfabeto cirílico y latino). La primerísima vez que se abre, la app te pide «Elegir idioma». ¡Igual que este mundo de aprendizaje!",
     "p|Por eso el código nunca dice «Hola» directamente. En su lugar hay una <strong>clave</strong> como <code>dashboard.greeting</code>. Cada idioma tiene su propio archivo que dice qué significa esa clave:",
     "@keys",
     "p|<code>{{name}}</code> es un <strong>marcador</strong>. Sparly pone ahí tu nombre. Para ti queda así: <strong>«¡Hola %{name}!»</strong>",
@@ -637,7 +638,7 @@ Lern.lang("es", {
   "s.sprachen.pro.langs.note": "Cada idioma tiene un código corto (de, en, tr…) y un locale. El locale decide cómo se escriben los números y las fechas.",
   "s.sprachen.ui.title": "Selector de idioma",
   "s.sprachen.ui.hint": "Todos los textos del móvil salen de las traducciones reales de Sparly. Fíjate también en las cantidades: ¡cada idioma escribe los números de forma distinta y tiene su propia moneda! Solo los nombres de las anotaciones se quedan igual. Los escribió alguien a mano, y eso no lo traduce ninguna app.",
-  "s.sprachen.ui.tried": "Vistos hasta ahora: %{n} de 8",
+  "s.sprachen.ui.tried": "Vistos hasta ahora: %{n} de %{total}",
   "s.sprachen.ui.keyText": "Clave → texto",
   "s.sprachen.quiz": [
     { "q": "¿Qué hay en el código en lugar de la palabra «Hola»?", "o": ["Una clave como <code>dashboard.greeting</code>", "Un dibujo", "Nada de nada", "«Hola» en todos los idiomas a la vez"] },
@@ -938,7 +939,7 @@ Lern.lang("es", {
     { "q": "¿Para qué sirve el sello GCM de una exportación cifrada?", "o": ["Nota si alguien ha cambiado el archivo o si la contraseña es incorrecta", "Pone el archivo de colores", "Envía el archivo", "Borra exportaciones antiguas"] },
     { "q": "¿Qué es una migración?", "o": ["Una reforma de la base de datos durante una actualización", "Mudarse a otro país", "Una medalla", "Un gráfico"] },
     { "q": "¿Qué requisito es <strong>no funcional</strong>?", "o": ["La app debe responder en menos de un segundo", "Puedes añadir un gasto", "Hay una lista de deseos", "Puedes coleccionar medallas"], "why": "Describe <em>lo bien</em> que la app hace algo, no <em>qué</em> hace." },
-    { "q": "¿Cuántos idiomas habla Sparly?", "o": ["8", "2", "5", "100"] },
+    { "q": "¿Cuántos idiomas habla Sparly?", "o": ["10", "2", "5", "100"] },
     { "q": "Un experto ha copiado el archivo de la base de datos. ¿Cuánto tarda en encontrar un PIN de cuatro cifras?", "o": ["Más de 7 horas, por los tiempos de espera", "Un abrir y cerrar de ojos, porque los tiempos de espera solo existen en la app", "Es imposible, nunca funciona", "Exactamente 100 años"], "why": "Solo hay %{n:10000} PIN. Fuera de la app, puede batirlos y compararlos todos." }
   ]
 });

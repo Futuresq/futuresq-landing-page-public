@@ -247,12 +247,17 @@ const t: TransactionRow = {
   /* ======================================================================
      Station 8 – Counting in cents
      ====================================================================== */
-  const CURRENCIES = [['EUR', '🇪🇺'], ['USD', '🇺🇸'], ['GBP', '🇬🇧'], ['CHF', '🇨🇭'], ['PLN', '🇵🇱'], ['RON', '🇷🇴'], ['TRY', '🇹🇷']];
+  const CURRENCIES = [['EUR', '🇪🇺'], ['USD', '🇺🇸'], ['GBP', '🇬🇧'], ['CHF', '🇨🇭'], ['PLN', '🇵🇱'], ['RON', '🇷🇴'], ['TRY', '🇹🇷'], ['CZK', '🇨🇿'], ['RSD', '🇷🇸']];
+  /** The app's symbol, in the spelling of the language that uses this locale when it has its own (дин. in Serbian Cyrillic). */
+  function symFor(cur, locale) {
+    const li = L.LANGS.find((l) => l.locale === locale && l.cur === cur && l.sym);
+    return li ? li.sym : L.SYMBOLS[cur];
+  }
   function fmtLike(cents, cur, locale) {
     try {
       const f = new Intl.NumberFormat(locale, { style: 'currency', currency: cur, minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      return f.formatToParts(cents / 100).map((p) => (p.type === 'currency' ? L.SYMBOLS[cur] : p.value)).join('');
-    } catch { return (cents / 100).toFixed(2) + ' ' + L.SYMBOLS[cur]; }
+      return f.formatToParts(cents / 100).map((p) => (p.type === 'currency' ? symFor(cur, locale) : p.value)).join('');
+    } catch { return (cents / 100).toFixed(2) + ' ' + symFor(cur, locale); }
   }
 
   L.defineStation({
@@ -386,7 +391,7 @@ export function formatCurrency(cents, currency = 'EUR', lang = 'de') {
   });
 
   /* ======================================================================
-     Station 10 – Sparly speaks 8 languages
+     Station 10 – Sparly speaks 10 languages
      ====================================================================== */
   const KEYS = ['dashboard.greeting', 'dashboard.welcome_back', 'dashboard.your_money', 'dashboard.income', 'dashboard.expense', 'dashboard.recent_expenses', 'dashboard.daily_tip'];
 
@@ -405,6 +410,9 @@ export function formatCurrency(cents, currency = 'EUR', lang = 'de') {
   { code: 'pl', label: 'Polski',   flag: '🇵🇱', locale: 'pl-PL' },
   { code: 'es', label: 'Español',  flag: '🇪🇸', locale: 'es-ES' },
   { code: 'it', label: 'Italiano', flag: '🇮🇹', locale: 'it-IT' },
+  { code: 'cs', label: 'Čeština',  flag: '🇨🇿', locale: 'cs-CZ' },
+  { code: 'sr', label: 'Српски (ћирилица)', flag: '🇷🇸', locale: 'sr-RS' },
+  { code: 'sr-Latn', label: 'Srpski (latinica)', flag: '🇷🇸', locale: 'sr-Latn-RS' },
 ] as const;`),
       });
     },
@@ -414,14 +422,18 @@ export function formatCurrency(cents, currency = 'EUR', lang = 'de') {
       const tbl = h('table', { class: 'keytbl' });
       const row = h('div', { class: 'lang-row', role: 'group' });
       const counter = h('p', { class: 'hint' });
+      // Serbian counts once, whichever script you look at it in.
+      const base = (c) => c.split('-')[0];
+      const total = new Set(L.LANGS.map((l) => base(l.code))).size;
       function show(code, silent) {
         tried.add(code); api.flag('langs', Array.from(tried));
         holder.replaceChildren(L.phone(L.dashboard(code), L.tabBar('money', null, code)));
         tbl.replaceChildren(...KEYS.map((k) => h('tr', null, h('td', null, k), h('td', null, app(k, null, code)))), h('tr', null, h('td', null, 'tips.tip_0'), h('td', null, L.raw('app.tips', code)[0])));
         row.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b._c === code)));
-        counter.textContent = api.t('ui.tried', { n: tried.size });
+        const seen = new Set(Array.from(tried, base)).size;
+        counter.textContent = api.t('ui.tried', { n: seen, total });
         if (!silent) L.sound('click');
-        if (tried.size === 8) { api.badge('weltenbummler'); api.challenge(holder); }
+        if (seen === total) { api.badge('weltenbummler'); api.challenge(holder); }
       }
       L.LANGS.forEach((l) => { const b = h('button', { class: 'chip', type: 'button', lang: l.code, onclick: () => show(l.code) }, l.flag + ' ' + l.label); b._c = l.code; row.append(b); });
       show(L.currentLang(), true);

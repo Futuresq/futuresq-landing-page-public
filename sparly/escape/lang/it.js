@@ -231,7 +231,7 @@ Esc.lang("it", {
   "r.start.o.plant.coin": "Tra le foglie luccica qualcosa: una moneta segreta di Sparly!",
   "r.start.o.plant.text": "Una pianta in vaso. Non ha bisogno della paghetta, solo di acqua.",
   "r.start.o.tabbar": "Barra delle schede",
-  "r.start.o.tabbar.text": "Sei sopra la barra delle schede. I suoi cinque pulsanti portano nelle zone di Sparly, sempre in quest'ordine da sinistra a destra:",
+  "r.start.o.tabbar.text": "Sei sopra la barra delle schede. Ha cinque pulsanti: quattro schede che portano nelle zone di Sparly e, al centro, il pulsante rotondo ➕. Da sinistra a destra sono sempre in quest'ordine:",
   "r.start.o.door": "Porta",
   "r.start.o.door.openText": "La porta è aperta. Avanti!",
   "r.start.o.door.text": "La porta ha un lucchetto a combinazione a forma di importo. Sul cartello c'è scritto: «Codice = il tuo saldo».",
@@ -322,9 +322,9 @@ Esc.lang("it", {
     "La domanda dice: somma tutti gli importi (amount), ma solo nelle righe con category_id = cat_exp_sweets. Tocca le righe per segnarle.",
     "350 + 425 + 500 = 1275. Questo è il codice della corrente."
   ],
-  "r.engine.door.goal": "La porta ha la corrente. Ora vuole le cinque schede nell'ordine giusto, ma in lingue straniere!",
+  "r.engine.door.goal": "La porta ha la corrente. Ora vuole i cinque pulsanti della barra delle schede nell'ordine giusto, ma in lingue straniere!",
   "r.engine.door.h": [
-    "Sui pulsanti ci sono i nomi delle schede in altre lingue. Cerca ogni parola sul poster delle traduzioni 📖.",
+    "Sui pulsanti ci sono i nomi della barra delle schede in altre lingue. Cerca ogni parola sul poster delle traduzioni 📖.",
     "Premi i pulsanti nell'ordine della barra delle schede: Soldi, Riepilogo, Nuovo, Desideri, Medaglie. Lo trovi anche nel tuo taccuino.",
     "L'ordine è: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("it", {
   "r.engine.inRestaurant": "Nel ristorante:",
   "r.engine.order": ["Tocchi Salva", "Le regole controllano l'importo", "Lo store riceve l'incarico", "Il database salva una nuova riga", "Il saldo viene ricaricato", "Vengono controllate le regole delle medaglie"],
   "r.engine.keysTitle": "Chiavi di traduzione",
-  "r.engine.keysText": "Nel codice di Sparly non c'è mai un testo fisso, ma solo una chiave. Per ogni lingua c'è una traduzione diversa. Ecco le chiavi delle cinque schede, in ordine alfabetico:",
+  "r.engine.keysText": "Nel codice di Sparly non c'è mai un testo fisso, ma solo una chiave. Per ogni lingua c'è una traduzione diversa. Ecco le chiavi dei cinque pulsanti della barra delle schede, in ordine alfabetico:",
   "r.engine.rowTip": "Segna la riga",
   "r.engine.desc.d1": "Paghetta",
   "r.engine.desc.d2": "Orsetti gommosi",
@@ -387,7 +387,7 @@ Esc.lang("it", {
   "r.engine.o.door.openText": "La porta è aperta.",
   "r.engine.o.door.noPower": "La porta non si muove. Senza corrente qui non funziona niente. Da qualche parte ci deve essere un quadro elettrico.",
   "r.engine.o.door.text": "Sulla porta si illuminano cinque pulsanti. Buggy ha cambiato le loro scritte in lingue straniere!",
-  "r.engine.o.door.plate": "Premi le schede nell'ordine in cui stanno in fondo a Sparly: da sinistra a destra.",
+  "r.engine.o.door.plate": "Premi i pulsanti nell'ordine in cui stanno nella barra delle schede di Sparly: da sinistra a destra.",
   "r.engine.o.door.reset": "Ordine sbagliato! Si ricomincia da capo.",
 
   /* ==================== Stanza 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("it", {
   "r.vault.drawer.goal": "Sul cassetto c'è un messaggio segreto scritto con gli animali. Decifralo!",
   "r.vault.drawer.h": [
     "Sul tavolo c'è un disco decifratore 🔄. Sul suo foglietto c'è scritto qual è la chiave.",
-    "La chiave è il numero di schede di Sparly: 5. Gira il disco su 5 e guarda quale cifra c'è sopra ogni animale.",
+    "La chiave è il numero di pulsanti nella barra in fondo a Sparly: 5 (quattro schede e il pulsante ➕). Gira il disco su 5 e guarda quale cifra c'è sopra ogni animale.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Il codice è 4296."
   ],
   "r.vault.pin.goal": "Apri la cassaforte. Quale PIN della lista di Buggy è quello giusto?",
@@ -439,7 +439,7 @@ Esc.lang("it", {
   "r.vault.o.poster": "Poster",
   "r.vault.o.wheel": "Disco decifratore",
   "r.vault.o.wheel.text": "Con questo disco Buggy ha messo in codice il suo messaggio segreto. Ogni cifra è stata sostituita da un animale. Il messaggio sul cassetto:",
-  "r.vault.o.wheel.sticky": "📌 Foglietto sul disco: «Chiave = Quante schede ha Sparly?»",
+  "r.vault.o.wheel.sticky": "📌 Foglietto sul disco: «Chiave = Quanti pulsanti ha la barra in fondo a Sparly?»",
   "r.vault.o.monitor": "Schermo",
   "r.vault.o.monitor.text": "Lo schermo mostra una tabella del database. Ecco come Sparly ha salvato il PIN della cassaforte:",
   "r.vault.o.monitor.after": "Il PIN non c'è da nessuna parte! Solo il sale e l'hash, cioè il frullato fatto con PIN e sale.",

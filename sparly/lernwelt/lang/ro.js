@@ -77,6 +77,7 @@ Lern.lang("ro", {
   "ui.newWordsHint": "Când termini stația, ele ajung în dicționarul tău.",
   "ui.doneText": "Stație terminată! Aici ai %{n} din 3 stele.",
   "ui.donePerfectHint": "Joacă din nou quizul fără nicio greșeală ca să primești steaua „Fix în țintă”.",
+  "ui.doneTaskHint": "Pentru încă o stea, rezolvă sarcina de la „%{step}”.",
   "ui.nextStation": "Stația următoare",
   "ui.toExam": "Mergi la examenul de maestru",
   "ui.readyText": "Ai terminat toate întrebările! Încheie stația și ia 25 de monede.",
@@ -144,7 +145,7 @@ Lern.lang("ro", {
   "world.1.sub": "Ce face aplicația pentru tine: îți notezi banii, economisești, te uiți la grafice și aduni insigne.",
   "world.2.tag": "Lumea 2 · Tehnologie",
   "world.2.title": "Cum e construit Sparly",
-  "world.2.sub": "O privire sub capotă: piese de construcție, baza de date, socotitul în bani și opt limbi.",
+  "world.2.sub": "O privire sub capotă: piese de construcție, baza de date, socotitul în bani și zece limbi.",
   "world.3.tag": "Lumea 3 · Calitate",
   "world.3.title": "Ce face din Sparly o aplicație bună",
   "world.3.sub": "Securitate, teste, viteză, ușurință în folosire și drumul spre magazinul de aplicații. Experții le numesc „cerințe nefuncționale”.",
@@ -172,7 +173,7 @@ Lern.lang("ro", {
   "badge.paket.name": "Curierul",
   "badge.paket.desc": "Ai pus în ordine călătoria unei înregistrări",
   "badge.weltenbummler.name": "Călător prin lume",
-  "badge.weltenbummler.desc": "Ai văzut Sparly în toate cele 8 limbi",
+  "badge.weltenbummler.desc": "Ai văzut Sparly în toate cele 10 limbi",
   "badge.welt2.name": "Maestru constructor",
   "badge.welt2.desc": "Ai terminat toate stațiile din lumea 2",
   "badge.hacker.name": "Scut anti-hacker",
@@ -205,24 +206,24 @@ Lern.lang("ro", {
 
   /* ---------- Stația 1 ---------- */
   "s.start.title": "Acesta este Sparly",
-  "s.start.short": "Aplicația și cele cinci taburi ale ei",
+  "s.start.short": "Aplicația și cele patru taburi ale ei",
   "s.start.lead": "O aplicație care îi ajută pe copii să țină evidența banilor de buzunar și să economisească pentru dorințele lor.",
-  "s.start.challenge": "Apasă pe toate cele 5 taburi de pe telefon",
+  "s.start.challenge": "Apasă pe toate cele 4 taburi și pe butonul ➕ de pe telefon",
   "s.start.learn": [
     "p|Sparly este o aplicație pentru telefon. Copiii notează în ea câți bani primesc și pe ce îi cheltuiesc. Așa văd mereu câți bani le-au mai rămas și pot economisi pentru lucrurile pe care și le doresc.",
     "p|Sparly a fost făcut pentru copii între <strong>9 și 16 ani</strong>. Merge pe iPhone, pe iPad și pe telefoanele și tabletele cu Android.",
     "fakt|Sparly funcționează complet <strong>fără internet</strong>. Tot ce introduci rămâne pe telefonul tău. Experții numesc asta <em>offline-first</em>.",
-    "p|Jos în aplicație e o bară cu cinci butoane. Ele se numesc <strong>taburi</strong>. Fiecare tab duce într-o altă zonă:",
+    "p|Jos în aplicație e o bară cu cinci butoane: patru <strong>taburi</strong> și un buton mare și rotund în mijloc. Fiecare tab duce într-o altă zonă:",
     "li|💰 <strong>Bani</strong>: soldul tău și ultimele tale venituri și cheltuieli",
     "li|📊 <strong>Rezumat</strong>: grafice care arată pe ce s-au dus banii tăi",
-    "li|➕ <strong>Nou</strong>: butonul mare și rotund din mijloc, cu care adaugi ceva nou",
+    "li|➕ <strong>Nou</strong>: butonul mare și rotund din mijloc. Nu e un tab: deschide un meniu cu care adaugi ceva nou",
     "li|⭐ <strong>Dorințe</strong>: lista ta de dorințe și obiectivele tale de economii",
     "li|🏆 <strong>Insigne</strong>: colecția ta de recompense",
-    "stell|Sparly e ca o casă cu cinci camere. Bara de taburi e holul: de acolo ajungi în orice cameră. Butonul mare din mijloc e ușa de la intrare, prin care vine tot ce e nou.",
+    "stell|Sparly e ca o casă cu patru camere. Bara de taburi e holul: de acolo ajungi în orice cameră. Butonul mare din mijloc e ușa de la intrare, prin care vine tot ce e nou.",
     "@pro"
   ],
   "s.start.pro.tabs.title": "Cum arată bara de taburi în cod",
-  "s.start.pro.tabs.note": "Fiecare tab primește un emoji și o cheie pentru numele lui. Semnele ciudate, ca \\uD83D\\uDCB0, sunt codul secret al calculatorului pentru emoji-ul 💰. Ce e o cheie afli în stația 10.",
+  "s.start.pro.tabs.note": "Fiecare tab și butonul ➕ primesc un emoji și o cheie pentru numele lor. Semnele ciudate, ca \\uD83D\\uDCB0, sunt codul secret al calculatorului pentru emoji-ul 💰. Ce e o cheie afli în stația 10.",
   "s.start.info.money": "Ecranul principal. Sus vezi soldul, dedesubt ultimele cheltuieli și venituri, următoarea insignă și sfatul zilei.",
   "s.start.info.review": "Graficele îți arată câți bani au intrat și pe ce i-ai cheltuit. Poți alege între săptămână, lună, an și tot timpul.",
   "s.start.info.new": "Butonul mare și rotund deschide un meniu cu trei variante: venit, cheltuială sau o dorință nouă.",
@@ -230,7 +231,7 @@ Lern.lang("ro", {
   "s.start.info.badges": "Toate cele 23 de insigne din Sparly. Cele câștigate strălucesc colorat, celelalte sunt gri și îți spun ce mai lipsește.",
   "s.start.ui.visited": "Deja vizitat",
   "s.start.quiz": [
-    { "q": "Câte taburi sunt în bara de jos din Sparly?", "o": ["3", "5", "7", "10"], "why": "Bani, Rezumat, Nou, Dorințe și Insigne." },
+    { "q": "Câte taburi sunt în bara de jos din Sparly?", "o": ["3", "4", "5", "6"], "why": "Bani, Rezumat, Dorințe și Insigne. ➕ din mijloc nu e un tab, ci un buton." },
     { "q": "Ce se deschide când apeși pe ➕ cel mare din mijloc?", "o": ["Setările", "Un meniu: venit, cheltuială sau dorință nouă", "Un joc", "Magazinul de aplicații"], "why": "Prin ➕ adaugi tot ce e nou." },
     { "q": "Sparly are nevoie de internet ca să funcționeze.", "why": "Sparly e offline-first. Totul merge direct pe telefon." },
     { "q": "Pentru cine a fost făcut Sparly?", "o": ["Pentru bănci", "Pentru copii între 9 și 16 ani", "Doar pentru adulți", "Pentru profesori"] }
@@ -311,7 +312,7 @@ Lern.lang("ro", {
   "s.wuensche.quiz": [
     { "q": "Ai %{m:5000} în cont și ai alocat %{m:2000} obiectivului tău de economii. Câți bani mai sunt <strong>disponibili</strong>?", "why": "%{m:5000} − %{m:2000} = %{m:3000}. Banii alocați sunt tot ai tăi, doar că sunt puși deoparte." },
     { "q": "Un set Lego costă %{m:6000}. Îl vrei peste 3 luni. Cât trebuie să economisești în fiecare lună?", "why": "%{m:6000} împărțit la 3 luni = %{m:2000} pe lună." },
-    { "q": "Ce se întâmplă cu banii economisiți când ștergi un obiectiv de economii?", "o": ["Dispar", "Sunt din nou disponibili", "Ajung la părinți", "Se dublează"], "why": "Banii ies din borcan și se întorc la banii tăi disponibili." },
+    { "q": "Ce se întâmplă cu banii economisiți când ștergi un obiectiv de economii care nu a fost încă îndeplinit?", "o": ["Dispar", "Sunt din nou disponibili", "Ajung la părinți", "Se dublează"], "why": "Banii ies din borcan și se întorc la banii tăi disponibili." },
     { "q": "Banii alocați unui obiectiv de economii nu mai sunt ai tăi.", "why": "Sunt tot ai tăi și se socotesc în sold. Doar că sunt puși deoparte." }
   ],
   "s.wuensche.words": [
@@ -445,7 +446,7 @@ Lern.lang("ro", {
     "Limbajul de programare al lui Sparly. Are grijă să nu amesteci merele cu perele.",
     "O bază de date mică, ce locuiește chiar pe telefon.",
     "Da, chiar așa se numește – e cuvântul german pentru „stare”! Se ocupă de memoria aplicației, adică de store-uri.",
-    "Se ocupă de cele opt limbi.",
+    "Se ocupă de cele zece limbi.",
     "Face animațiile fluide, de exemplu la bateria de economii."
   ],
   "s.bausteine.pro.ts.title": "Cum are grijă TypeScript de greșeli",
@@ -545,7 +546,7 @@ Lern.lang("ro", {
     "p|Aproape 0,3, dar nu chiar. La bani asta ar fi enervant: după multe înregistrări, un ban ar putea să lipsească deodată sau să fie în plus. De aceea Sparly salvează fiecare sumă ca <strong>număr întreg de bani</strong> (1 leu are 100 de bani). Din %{m:350} se face 350. Cu numere întregi, calculatorul socotește mereu exact.",
     "formula|<span>%{m:350}</span><span>→ × 100 →</span><strong>350 de bani</strong>",
     "p|Abia chiar înainte ca suma să apară pe ecran, Sparly o transformă înapoi în „%{m:350}”. Asta se numește <strong>formatare</strong>.",
-    "p|Sparly poate afișa <strong>7 monede</strong>, adică 7 feluri de bani: euro, dolarul american, lira sterlină, francul elvețian, zlotul polonez, leul românesc și lira turcească.",
+    "p|Sparly poate afișa <strong>9 monede</strong>, adică 9 feluri de bani: euro, dolarul american, lira sterlină, francul elvețian, zlotul polonez, leul românesc, lira turcească, coroana cehă și dinarul sârbesc.",
     "merke|Sparly <strong>nu face schimb valutar</strong>! Dacă treci de la lei la euro, 10 lei devin pur și simplu 10 €. Numărul salvat rămâne 1000, se schimbă doar simbolul. Pentru banii de buzunar e exact ce trebuie, pentru că banii tăi sunt oricum în moneda ta.",
     "fakt|Cea mai mare sumă pe care o acceptă Sparly este %{n:100000000}, adică o sută de milioane. Ar trebui să ajungă pentru banii de buzunar 😄",
     "@pro"
@@ -619,12 +620,12 @@ Lern.lang("ro", {
   ],
 
   /* ---------- Stația 10 ---------- */
-  "s.sprachen.title": "Sparly vorbește 8 limbi",
+  "s.sprachen.title": "Sparly vorbește 10 limbi",
   "s.sprachen.short": "Chei în loc de texte fixe",
   "s.sprachen.lead": "Cum învață o aplicație să vorbească în același timp germană, turcă și română.",
-  "s.sprachen.challenge": "Uită-te la Sparly în toate cele 8 limbi",
+  "s.sprachen.challenge": "Uită-te la Sparly în toate cele 10 limbi",
   "s.sprachen.learn": [
-    "p|Sparly există în <strong>germană, engleză, turcă, română, franceză, poloneză, spaniolă și italiană</strong>. Chiar la prima pornire, aplicația îți cere: „Alegeți limba”. La fel face și lumea asta de învățare!",
+    "p|Sparly există în <strong>germană, engleză, turcă, română, franceză, poloneză, spaniolă, italiană, cehă și sârbă</strong> (cu alfabet chirilic și latin). Chiar la prima pornire, aplicația îți cere: „Alegeți limba”. La fel face și lumea asta de învățare!",
     "p|De aceea, în cod nu scrie niciodată direct „Bună”. În schimb, acolo e o <strong>cheie</strong>, ca <code>dashboard.greeting</code>. Fiecare limbă are fișierul ei, în care scrie ce înseamnă cheia asta:",
     "@keys",
     "p|<code>{{name}}</code> e un <strong>loc rezervat</strong>. Sparly pune acolo numele tău. La tine iese: <strong>„Bună %{name}!”</strong>",
@@ -637,7 +638,7 @@ Lern.lang("ro", {
   "s.sprachen.pro.langs.note": "Fiecare limbă are un cod scurt (de, en, tr …) și o setare regională (locale). Ea hotărăște cum se scriu numerele și datele.",
   "s.sprachen.ui.title": "Comutatorul de limbă",
   "s.sprachen.ui.hint": "Toate textele de pe telefon vin din traducerile reale ale lui Sparly. Fii atent și la sume: fiecare limbă scrie numerele altfel și are moneda ei! Doar numele înregistrărilor rămân la fel. Pe acelea le-a scris cineva singur, și așa ceva nu traduce nicio aplicație.",
-  "s.sprachen.ui.tried": "Văzute până acum: %{n} din 8",
+  "s.sprachen.ui.tried": "Văzute până acum: %{n} din %{total}",
   "s.sprachen.ui.keyText": "Cheie → text",
   "s.sprachen.quiz": [
     { "q": "Ce scrie în cod în locul cuvântului „Bună”?", "o": ["O cheie ca <code>dashboard.greeting</code>", "O poză", "Nimic", "„Bună” în toate limbile deodată"] },
@@ -938,7 +939,7 @@ Lern.lang("ro", {
     { "q": "La ce folosește sigiliul GCM de pe un export criptat?", "o": ["Observă dacă fișierul a fost modificat sau dacă parola e greșită", "Face fișierul colorat", "Trimite fișierul", "Șterge exporturile vechi"] },
     { "q": "Ce este o migrare?", "o": ["O renovare a bazei de date în timpul unei actualizări", "Mutarea într-o altă țară", "O insignă", "Un grafic"] },
     { "q": "Care cerință este <strong>nefuncțională</strong>?", "o": ["Aplicația trebuie să răspundă în mai puțin de o secundă", "Poți adăuga o cheltuială", "Există o listă de dorințe", "Poți colecționa insigne"], "why": "Ea descrie <em>cât de bine</em> face aplicația ceva, nu <em>ce</em> face." },
-    { "q": "Câte limbi vorbește Sparly?", "o": ["8", "2", "5", "100"] },
+    { "q": "Câte limbi vorbește Sparly?", "o": ["10", "2", "5", "100"] },
     { "q": "Un expert a copiat fișierul bazei de date. Cât îi ia să găsească un PIN din patru cifre?", "o": ["Peste 7 ore, din cauza timpilor de așteptare", "Doar cât ai clipi, pentru că timpii de așteptare există doar în aplicație", "Imposibil, nu merge niciodată", "Exact 100 de ani"], "why": "Există doar %{n:10000} de PIN-uri. În afara aplicației le poate mixa și compara pe toate." }
   ]
 });

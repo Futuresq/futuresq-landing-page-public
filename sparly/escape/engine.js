@@ -18,8 +18,12 @@
     { code: 'pl', label: 'Polski', flag: '🇵🇱', locale: 'pl-PL', cur: 'PLN' },
     { code: 'es', label: 'Español', flag: '🇪🇸', locale: 'es-ES', cur: 'EUR' },
     { code: 'it', label: 'Italiano', flag: '🇮🇹', locale: 'it-IT', cur: 'EUR' },
+    { code: 'cs', label: 'Čeština', flag: '🇨🇿', locale: 'cs-CZ', cur: 'CZK' },
+    // Serbian in both scripts, as in the app: lang/sr.js is Cyrillic, the Latin texts are derived from it.
+    { code: 'sr', label: 'Српски (ћирилица)', flag: '🇷🇸', locale: 'sr-RS', cur: 'RSD', sym: 'дин.' },
+    { code: 'sr-Latn', label: 'Srpski (latinica)', flag: '🇷🇸', locale: 'sr-Latn-RS', cur: 'RSD' },
   ];
-  const SYMBOLS = { EUR: '€', USD: '$', PLN: 'zł', RON: 'lei', TRY: '₺' };
+  const SYMBOLS = { EUR: '€', USD: '$', PLN: 'zł', RON: 'lei', TRY: '₺', CZK: 'Kč', RSD: 'din.' };
   const FALLBACK_LANG = 'en';
 
   const ROOMS = [];
@@ -33,7 +37,38 @@
   const DICT = {};
   let LANG = 'de';
 
-  function addLang(code, obj) { DICT[code] = Object.assign(DICT[code] || {}, obj); }
+  // Serbian Latin from Serbian Cyrillic, letter for letter, like the app (src/i18n/serbianLatin.ts).
+  const SR_LATIN = {
+    а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', ђ: 'đ', е: 'e', ж: 'ž', з: 'z', и: 'i',
+    ј: 'j', к: 'k', л: 'l', љ: 'lj', м: 'm', н: 'n', њ: 'nj', о: 'o', п: 'p', р: 'r',
+    с: 's', т: 't', ћ: 'ć', у: 'u', ф: 'f', х: 'h', ц: 'c', ч: 'č', џ: 'dž', ш: 'š',
+  };
+  const isLetter = (ch) => !!ch && ch.toLowerCase() !== ch.toUpperCase();
+  const isUpper = (ch) => isLetter(ch) && ch === ch.toUpperCase();
+  function toSerbianLatin(text) {
+    const chars = Array.from(text);
+    return chars.map((ch, i) => {
+      const lower = ch.toLowerCase();
+      const latin = SR_LATIN[lower];
+      if (latin === undefined) return ch;
+      if (ch === lower) return latin;
+      // Љ, Њ, Џ become "Lj", "Nj", "Dž" in a capitalised word but "LJ", "NJ", "DŽ" in an all-caps one.
+      const next = chars[i + 1];
+      const allCaps = isUpper(next) || (!isLetter(next) && isUpper(chars[i - 1]));
+      return allCaps ? latin.toUpperCase() : latin.charAt(0).toUpperCase() + latin.slice(1);
+    }).join('');
+  }
+  function latinDeep(v) {
+    if (typeof v === 'string') return toSerbianLatin(v);
+    if (Array.isArray(v)) return v.map(latinDeep);
+    if (v && typeof v === 'object') { const o = {}; for (const k of Object.keys(v)) o[k] = latinDeep(v[k]); return o; }
+    return v;
+  }
+
+  function addLang(code, obj) {
+    DICT[code] = Object.assign(DICT[code] || {}, obj);
+    if (code === 'sr') addLang('sr-Latn', latinDeep(obj));
+  }
   function langInfo(code) { return LANGS.find((l) => l.code === (code || LANG)) || LANGS[0]; }
 
   /** Raw dictionary value (string, array or object), falling back to English, then German. */
@@ -58,7 +93,7 @@
   /** Money in minor units, formatted like the app: the language decides the layout, the app's table the symbol. */
   function money(cents, whole, code) {
     const li = langInfo(code);
-    return curFormatter(li, whole ? 0 : 2).formatToParts(cents / 100).map((p) => (p.type === 'currency' ? SYMBOLS[li.cur] : p.value)).join('');
+    return curFormatter(li, whole ? 0 : 2).formatToParts(cents / 100).map((p) => (p.type === 'currency' ? symbolOf(li) : p.value)).join('');
   }
   /** How the language writes an amount: text before the number, the decimal sign, text after it. */
   function moneyParts(code) {
@@ -66,7 +101,7 @@
     const parts = curFormatter(li, 2).formatToParts(12.34);
     let pre = ''; let post = ''; let dec = '.'; let seenNum = false;
     for (const p of parts) {
-      const v = p.type === 'currency' ? SYMBOLS[li.cur] : p.value;
+      const v = p.type === 'currency' ? symbolOf(li) : p.value;
       if (p.type === 'integer') { seenNum = true; continue; }
       if (p.type === 'fraction') continue;
       if (p.type === 'decimal') { dec = v; continue; }
@@ -74,7 +109,8 @@
     }
     return { pre: pre.replace(/\s+/g, ' '), dec, post: post.replace(/\s+/g, ' ') };
   }
-  function curSymbol(code) { return SYMBOLS[langInfo(code).cur]; }
+  function symbolOf(li) { return li.sym || SYMBOLS[li.cur]; }
+  function curSymbol(code) { return symbolOf(langInfo(code)); }
   function numf(n, code) { return nf(langInfo(code).locale, { maximumFractionDigits: 2 }).format(n); }
   function datef(iso, opts, code) {
     const d = typeof iso === 'string' ? new Date(iso + 'T12:00:00') : iso;
@@ -115,6 +151,7 @@
     const list = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
     for (const l of list) {
       const c = String(l).split(/[-_]/)[0].toLowerCase();
+      if (c === 'sr') return /latn/i.test(l) ? 'sr-Latn' : 'sr';
       if (LANGS.some((x) => x.code === c)) return c;
     }
     return FALLBACK_LANG;
@@ -130,7 +167,7 @@
     if (!langLoads[code]) {
       langLoads[code] = new Promise((resolve) => {
         const el = document.createElement('script');
-        el.src = 'lang/' + code + '.js';
+        el.src = 'lang/' + (code === 'sr-Latn' ? 'sr' : code) + '.js'; // the Latin texts are made from the Cyrillic file
         el.onload = resolve;
         el.onerror = resolve; // fall back to English texts
         document.head.append(el);
@@ -763,7 +800,7 @@
       playing ? h('div', { class: 'timer num', title: t('ui.time'), 'aria-label': t('ui.time') }, icon('clock'), h('span', { id: 'clock' }, clock(S.time))) : null,
       playing ? h('button', { class: 'iconbtn', type: 'button', title: t('ui.hints'), 'aria-label': t('ui.hints'), onclick: openHints }, icon('bulb')) : null,
       playing ? h('button', { class: 'iconbtn', id: 'nb-btn', type: 'button', title: t('ui.notebook'), 'aria-label': t('ui.notebook') + (S.unread ? ' (' + S.unread + ')' : ''), onclick: openNotebook }, icon('book'), S.unread ? h('span', { class: 'cnt' }, S.unread) : null) : null,
-      h('button', { class: 'iconbtn langbtn', type: 'button', title: t('ui.language'), 'aria-label': t('ui.language') + ': ' + langInfo().label, onclick: langSheet }, icon('globe'), h('span', { class: 'cnt lang-code' }, LANG.toUpperCase())),
+      h('button', { class: 'iconbtn langbtn', type: 'button', title: t('ui.language'), 'aria-label': t('ui.language') + ': ' + langInfo().label, onclick: langSheet }, icon('globe'), h('span', { class: 'cnt lang-code' }, LANG.split('-')[0].toUpperCase())),
       h('button', { class: 'iconbtn', type: 'button', title: S.sound ? t('ui.soundOff') : t('ui.soundOn'), 'aria-label': S.sound ? t('ui.soundOff') : t('ui.soundOn'), onclick: () => { S.sound = !S.sound; save(); renderTop(); if (S.sound) sound('click'); } }, icon(S.sound ? 'soundOn' : 'soundOff')));
     top.replaceChildren(inner);
   }

@@ -231,7 +231,7 @@ Esc.lang("de", {
   "r.start.o.plant.coin": "Zwischen den Blättern glitzert etwas: eine geheime Sparly-Münze!",
   "r.start.o.plant.text": "Eine Topfpflanze. Sie braucht kein Taschengeld, nur Wasser.",
   "r.start.o.tabbar": "Tab-Leiste",
-  "r.start.o.tabbar.text": "Du stehst auf der Tab-Leiste. Ihre fünf Knöpfe führen in die Bereiche von Sparly, immer in dieser Reihenfolge von links nach rechts:",
+  "r.start.o.tabbar.text": "Du stehst auf der Tab-Leiste. Sie hat fünf Knöpfe: vier Tabs, die in die Bereiche von Sparly führen, und in der Mitte den runden ➕-Knopf. Von links nach rechts stehen sie immer in dieser Reihenfolge:",
   "r.start.o.door": "Tür",
   "r.start.o.door.openText": "Die Tür steht offen. Weiter geht's!",
   "r.start.o.door.text": "Die Tür hat ein Zahlenschloss in Form eines Betrags. Auf dem Schild steht: „Code = dein Kontostand“.",
@@ -322,9 +322,9 @@ Esc.lang("de", {
     "Die Frage heißt: Zähle alle Beträge (amount) zusammen, aber nur in den Zeilen mit category_id = cat_exp_sweets. Tippe die Zeilen an, um sie zu markieren.",
     "350 + 425 + 500 = 1275. Das ist der Strom-Code."
   ],
-  "r.engine.door.goal": "Die Tür hat Strom. Jetzt will sie die fünf Tabs in der richtigen Reihenfolge, aber in fremden Sprachen!",
+  "r.engine.door.goal": "Die Tür hat Strom. Jetzt will sie die fünf Knöpfe der Tab-Leiste in der richtigen Reihenfolge, aber in fremden Sprachen!",
   "r.engine.door.h": [
-    "Auf den Knöpfen stehen Namen der Tabs in anderen Sprachen. Schlag jedes Wort im Übersetzungs-Poster 📖 nach.",
+    "Auf den Knöpfen stehen die Namen aus der Tab-Leiste in anderen Sprachen. Schlag jedes Wort im Übersetzungs-Poster 📖 nach.",
     "Drück die Knöpfe in der Reihenfolge der Tab-Leiste: Geld, Rückblick, Neu, Wünsche, Abzeichen. Sie steht auch in deinem Notizbuch.",
     "Die Reihenfolge ist: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("de", {
   "r.engine.inRestaurant": "Im Restaurant:",
   "r.engine.order": ["Du tippst auf Speichern", "Die Regeln prüfen den Betrag", "Der Store bekommt den Auftrag", "Die Datenbank speichert eine neue Zeile", "Der Kontostand wird neu geladen", "Die Abzeichen-Regeln werden geprüft"],
   "r.engine.keysTitle": "Übersetzungs-Schlüssel",
-  "r.engine.keysText": "Im Code von Sparly steht kein fester Text, sondern ein Schlüssel. Für jede Sprache gibt es eine eigene Übersetzung. Hier sind die Schlüssel der fünf Tabs, nach dem Alphabet sortiert:",
+  "r.engine.keysText": "Im Code von Sparly steht kein fester Text, sondern ein Schlüssel. Für jede Sprache gibt es eine eigene Übersetzung. Hier sind die Schlüssel der fünf Knöpfe in der Tab-Leiste, nach dem Alphabet sortiert:",
   "r.engine.rowTip": "Zeile markieren",
   "r.engine.desc.d1": "Taschengeld",
   "r.engine.desc.d2": "Gummibärchen",
@@ -387,7 +387,7 @@ Esc.lang("de", {
   "r.engine.o.door.openText": "Die Tür steht offen.",
   "r.engine.o.door.noPower": "Die Tür rührt sich nicht. Ohne Strom funktioniert hier gar nichts. Irgendwo muss ein Sicherungskasten sein.",
   "r.engine.o.door.text": "Auf der Tür leuchten fünf Knöpfe. Buggy hat ihre Beschriftung in fremde Sprachen umgestellt!",
-  "r.engine.o.door.plate": "Drück die Tabs in der Reihenfolge, in der sie unten in Sparly stehen: von links nach rechts.",
+  "r.engine.o.door.plate": "Drück die Knöpfe in der Reihenfolge, in der sie unten in der Tab-Leiste von Sparly stehen: von links nach rechts.",
   "r.engine.o.door.reset": "Falsche Reihenfolge! Alles zurück auf Anfang.",
 
   /* ==================== Raum 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("de", {
   "r.vault.drawer.goal": "Auf der Schublade steht eine Geheimschrift aus Tieren. Entschlüssle sie!",
   "r.vault.drawer.h": [
     "Auf dem Tisch liegt eine Entschlüsselungs-Scheibe 🔄. Auf ihrem Zettel steht, was der Schlüssel ist.",
-    "Der Schlüssel ist die Zahl der Tabs in Sparly: 5. Dreh die Scheibe auf 5 und schau, welche Ziffer über jedem Tier steht.",
+    "Der Schlüssel ist die Zahl der Knöpfe in der Leiste unten in Sparly: 5 (vier Tabs und der ➕-Knopf). Dreh die Scheibe auf 5 und schau, welche Ziffer über jedem Tier steht.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Der Code ist 4296."
   ],
   "r.vault.pin.goal": "Öffne den Tresor. Welche PIN aus Buggys Liste ist die richtige?",
@@ -439,7 +439,7 @@ Esc.lang("de", {
   "r.vault.o.poster": "Poster",
   "r.vault.o.wheel": "Entschlüsselungs-Scheibe",
   "r.vault.o.wheel.text": "Mit dieser Scheibe hat Buggy seine Geheimbotschaft verschlüsselt. Jede Ziffer wurde durch ein Tier ersetzt. Die Botschaft auf der Schublade:",
-  "r.vault.o.wheel.sticky": "📌 Zettel auf der Scheibe: „Schlüssel = Wie viele Tabs hat Sparly?“",
+  "r.vault.o.wheel.sticky": "📌 Zettel auf der Scheibe: „Schlüssel = Wie viele Knöpfe hat die Leiste unten in Sparly?“",
   "r.vault.o.monitor": "Bildschirm",
   "r.vault.o.monitor.text": "Der Bildschirm zeigt eine Tabelle aus der Datenbank. So hat Sparly die PIN des Tresors gespeichert:",
   "r.vault.o.monitor.after": "Die PIN selbst steht nirgends! Nur das Salz und der Hash, also der Smoothie aus PIN und Salz.",

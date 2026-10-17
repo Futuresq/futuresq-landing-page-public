@@ -231,7 +231,7 @@ Esc.lang("es", {
   "r.start.o.plant.coin": "Algo brilla entre las hojas: ¡una moneda secreta de Sparly!",
   "r.start.o.plant.text": "Una planta en su maceta. No necesita paga, solo agua.",
   "r.start.o.tabbar": "Barra de pestañas",
-  "r.start.o.tabbar.text": "Estás de pie sobre la barra de pestañas. Sus cinco botones llevan a las zonas de Sparly, siempre en este orden de izquierda a derecha:",
+  "r.start.o.tabbar.text": "Estás de pie sobre la barra de pestañas. Tiene cinco botones: cuatro pestañas que llevan a las zonas de Sparly y, en el centro, el botón redondo ➕. De izquierda a derecha, siempre están en este orden:",
   "r.start.o.door": "Puerta",
   "r.start.o.door.openText": "La puerta está abierta. ¡Adelante!",
   "r.start.o.door.text": "La puerta tiene una cerradura de combinación con forma de cantidad de dinero. El cartel dice: «Código = tu saldo».",
@@ -322,9 +322,9 @@ Esc.lang("es", {
     "La pregunta dice: suma todas las cantidades (amount), pero solo las de las filas con category_id = cat_exp_sweets. Toca las filas para marcarlas.",
     "350 + 425 + 500 = 1275. Ese es el código de corriente."
   ],
-  "r.engine.door.goal": "La puerta ya tiene corriente. Ahora quiere las cinco pestañas en el orden correcto, ¡pero en otros idiomas!",
+  "r.engine.door.goal": "La puerta ya tiene corriente. Ahora quiere los cinco botones de la barra de pestañas en el orden correcto, ¡pero en otros idiomas!",
   "r.engine.door.h": [
-    "En los botones están los nombres de las pestañas en otros idiomas. Busca cada palabra en el póster de traducciones 📖.",
+    "En los botones están los nombres de la barra de pestañas en otros idiomas. Busca cada palabra en el póster de traducciones 📖.",
     "Pulsa los botones en el orden de la barra de pestañas: Dinero, Resumen, Nuevo, Deseos, Medallas. También lo tienes en tu cuaderno.",
     "El orden es: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("es", {
   "r.engine.inRestaurant": "En el restaurante:",
   "r.engine.order": ["Tocas Guardar", "Las reglas comprueban la cantidad", "El store recibe el encargo", "La base de datos guarda una fila nueva", "Se vuelve a cargar el saldo", "Se comprueban las reglas de las medallas"],
   "r.engine.keysTitle": "Claves de traducción",
-  "r.engine.keysText": "En el código de Sparly no hay textos fijos, sino claves. Cada idioma tiene su propia traducción. Aquí tienes las claves de las cinco pestañas, por orden alfabético:",
+  "r.engine.keysText": "En el código de Sparly no hay textos fijos, sino claves. Cada idioma tiene su propia traducción. Aquí tienes las claves de los cinco botones de la barra de pestañas, por orden alfabético:",
   "r.engine.rowTip": "Marcar la fila",
   "r.engine.desc.d1": "Paga",
   "r.engine.desc.d2": "Ositos de gominola",
@@ -387,7 +387,7 @@ Esc.lang("es", {
   "r.engine.o.door.openText": "La puerta está abierta.",
   "r.engine.o.door.noPower": "La puerta no se mueve. Sin corriente, aquí no funciona nada. Tiene que haber una caja de fusibles en algún sitio.",
   "r.engine.o.door.text": "En la puerta brillan cinco botones. ¡Buggy ha cambiado sus nombres a otros idiomas!",
-  "r.engine.o.door.plate": "Pulsa las pestañas en el orden en que aparecen abajo en Sparly: de izquierda a derecha.",
+  "r.engine.o.door.plate": "Pulsa los botones en el orden en que aparecen en la barra de pestañas de Sparly: de izquierda a derecha.",
   "r.engine.o.door.reset": "¡Orden incorrecto! Vuelta a empezar.",
 
   /* ==================== Sala 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("es", {
   "r.vault.drawer.goal": "En el cajón hay un mensaje secreto hecho de animales. ¡Descífralo!",
   "r.vault.drawer.h": [
     "En la mesa hay un disco descifrador 🔄. En su nota pone cuál es la clave.",
-    "La clave es el número de pestañas de Sparly: 5. Gira el disco hasta el 5 y mira qué cifra hay encima de cada animal.",
+    "La clave es el número de botones de la barra de abajo de Sparly: 5 (cuatro pestañas y el botón ➕). Gira el disco hasta el 5 y mira qué cifra hay encima de cada animal.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. El código es 4296."
   ],
   "r.vault.pin.goal": "Abre la cámara acorazada. ¿Qué PIN de la lista de Buggy es el correcto?",
@@ -439,7 +439,7 @@ Esc.lang("es", {
   "r.vault.o.poster": "Póster",
   "r.vault.o.wheel": "Disco descifrador",
   "r.vault.o.wheel.text": "Con este disco, Buggy cifró su mensaje secreto. Cambió cada cifra por un animal. El mensaje del cajón:",
-  "r.vault.o.wheel.sticky": "📌 Nota en el disco: «Clave = ¿Cuántas pestañas tiene Sparly?»",
+  "r.vault.o.wheel.sticky": "📌 Nota en el disco: «Clave = ¿Cuántos botones tiene la barra de abajo de Sparly?»",
   "r.vault.o.monitor": "Pantalla",
   "r.vault.o.monitor.text": "La pantalla muestra una tabla de la base de datos. Así guardó Sparly el PIN de la cámara acorazada:",
   "r.vault.o.monitor.after": "¡El PIN no aparece por ningún lado! Solo la sal y el hash, es decir, el batido de PIN y sal.",

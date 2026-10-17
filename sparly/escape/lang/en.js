@@ -231,7 +231,7 @@ Esc.lang("en", {
   "r.start.o.plant.coin": "Something glitters between the leaves: a secret Sparly coin!",
   "r.start.o.plant.text": "A potted plant. It doesn't need pocket money, just water.",
   "r.start.o.tabbar": "Tab bar",
-  "r.start.o.tabbar.text": "You're standing on the tab bar. Its five buttons lead to the parts of Sparly, always in this order from left to right:",
+  "r.start.o.tabbar.text": "You're standing on the tab bar. It has five buttons: four tabs that lead to the parts of Sparly, and the round ➕ button in the middle. From left to right, they always come in this order:",
   "r.start.o.door": "Door",
   "r.start.o.door.openText": "The door is open. Onward!",
   "r.start.o.door.text": "The door has a number lock shaped like an amount of money. The sign says: “Code = your balance”.",
@@ -322,9 +322,9 @@ Esc.lang("en", {
     "The question says: add up all the amounts, but only in the rows where category_id = cat_exp_sweets. Tap the rows to mark them.",
     "350 + 425 + 500 = 1275. That's the power code."
   ],
-  "r.engine.door.goal": "The door has power. Now it wants the five tabs in the right order, but in foreign languages!",
+  "r.engine.door.goal": "The door has power. Now it wants the five buttons of the tab bar in the right order, but in foreign languages!",
   "r.engine.door.h": [
-    "The buttons show the names of the tabs in other languages. Look up each word on the translation poster 📖.",
+    "The buttons show the names from the tab bar in other languages. Look up each word on the translation poster 📖.",
     "Press the buttons in the order of the tab bar: Money, Review, New, Wishes, Badges. It's in your notebook too.",
     "The order is: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("en", {
   "r.engine.inRestaurant": "In the restaurant:",
   "r.engine.order": ["You tap Save", "The rules check the amount", "The store gets the job", "The database saves a new row", "The balance gets reloaded", "The badge rules get checked"],
   "r.engine.keysTitle": "Translation keys",
-  "r.engine.keysText": "Sparly's code never contains fixed text, only a key. Each language has its own translation. Here are the keys of the five tabs, in alphabetical order:",
+  "r.engine.keysText": "Sparly's code never contains fixed text, only a key. Each language has its own translation. Here are the keys of the five buttons in the tab bar, in alphabetical order:",
   "r.engine.rowTip": "Mark this row",
   "r.engine.desc.d1": "Pocket money",
   "r.engine.desc.d2": "Gummy bears",
@@ -387,7 +387,7 @@ Esc.lang("en", {
   "r.engine.o.door.openText": "The door is open.",
   "r.engine.o.door.noPower": "The door won't move. Nothing works here without power. There must be a fuse box somewhere.",
   "r.engine.o.door.text": "Five buttons light up on the door. Buggy switched their labels to foreign languages!",
-  "r.engine.o.door.plate": "Press the tabs in the order they appear at the bottom of Sparly: from left to right.",
+  "r.engine.o.door.plate": "Press the buttons in the order they appear in Sparly's tab bar: from left to right.",
   "r.engine.o.door.reset": "Wrong order! Back to the start.",
 
   /* ==================== Room 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("en", {
   "r.vault.drawer.goal": "There's a secret message made of animals on the drawer. Decode it!",
   "r.vault.drawer.h": [
     "There's a decoder wheel 🔄 on the desk. Its sticky note tells you what the key is.",
-    "The key is the number of tabs in Sparly: 5. Turn the wheel to 5 and see which digit sits above each animal.",
+    "The key is the number of buttons in the bar at the bottom of Sparly: 5 (four tabs and the ➕ button). Turn the wheel to 5 and see which digit sits above each animal.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. The code is 4296."
   ],
   "r.vault.pin.goal": "Open the vault. Which PIN from Buggy's list is the right one?",
@@ -439,7 +439,7 @@ Esc.lang("en", {
   "r.vault.o.poster": "Poster",
   "r.vault.o.wheel": "Decoder wheel",
   "r.vault.o.wheel.text": "Buggy used this wheel to encrypt his secret message. Each digit was swapped for an animal. The message on the drawer:",
-  "r.vault.o.wheel.sticky": "📌 Note on the wheel: “Key = How many tabs does Sparly have?”",
+  "r.vault.o.wheel.sticky": "📌 Note on the wheel: “Key = How many buttons are in the bar at the bottom of Sparly?”",
   "r.vault.o.monitor": "Screen",
   "r.vault.o.monitor.text": "The screen shows a table from the database. This is how Sparly saved the vault's PIN:",
   "r.vault.o.monitor.after": "The PIN itself isn't anywhere! Only the salt and the hash, which is the smoothie made from the PIN and the salt.",

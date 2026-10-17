@@ -231,7 +231,7 @@ Esc.lang("tr", {
   "r.start.o.plant.coin": "Yaprakların arasında bir şey parlıyor: gizli bir Sparly jetonu!",
   "r.start.o.plant.text": "Bir saksı bitkisi. Harçlığa ihtiyacı yok, sadece suya.",
   "r.start.o.tabbar": "Sekme çubuğu",
-  "r.start.o.tabbar.text": "Sekme çubuğunun üstünde duruyorsun. Beş düğmesi Sparly'nin bölümlerine götürür, hep soldan sağa bu sırayla:",
+  "r.start.o.tabbar.text": "Sekme çubuğunun üstünde duruyorsun. Beş düğmesi var: Sparly'nin bölümlerine götüren dört sekme ve ortada yuvarlak ➕ düğmesi. Soldan sağa hep bu sırayla dururlar:",
   "r.start.o.door": "Kapı",
   "r.start.o.door.openText": "Kapı açık. Devam!",
   "r.start.o.door.text": "Kapıda para tutarı biçiminde bir şifreli kilit var. Tabelada şöyle yazıyor: “Kod = bakiyen”.",
@@ -322,9 +322,9 @@ Esc.lang("tr", {
     "Soru şu demek: Bütün tutarları (amount) topla, ama sadece category_id = cat_exp_sweets olan satırlardakileri. İşaretlemek için satırlara dokun.",
     "350 + 425 + 500 = 1275. Elektrik kodu bu."
   ],
-  "r.engine.door.goal": "Kapıya elektrik geldi. Şimdi beş sekmeyi doğru sırayla istiyor, ama yabancı dillerde!",
+  "r.engine.door.goal": "Kapıya elektrik geldi. Şimdi sekme çubuğundaki beş düğmeyi doğru sırayla istiyor, ama yabancı dillerde!",
   "r.engine.door.h": [
-    "Düğmelerde sekmelerin başka dillerdeki adları yazıyor. Her kelimeyi çeviri posterinde 📖 bul.",
+    "Düğmelerde sekme çubuğundaki adlar başka dillerde yazıyor. Her kelimeyi çeviri posterinde 📖 bul.",
     "Düğmelere sekme çubuğundaki sırayla bas: Para, Özet, Yeni, Dilekler, Rozetler. Bu sıra not defterinde de yazıyor.",
     "Sıralama şöyle: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("tr", {
   "r.engine.inRestaurant": "Restoranda:",
   "r.engine.order": ["Kaydet'e dokunuyorsun", "Kurallar tutarı kontrol eder", "Store görevi alır", "Veritabanı yeni bir satır kaydeder", "Bakiye yeniden yüklenir", "Rozet kuralları kontrol edilir"],
   "r.engine.keysTitle": "Çeviri anahtarları",
-  "r.engine.keysText": "Sparly'nin kodunda sabit bir metin yazmaz, onun yerine bir anahtar durur. Her dilin kendi çevirisi vardır. İşte beş sekmenin anahtarları, alfabetik sırayla:",
+  "r.engine.keysText": "Sparly'nin kodunda sabit bir metin yazmaz, onun yerine bir anahtar durur. Her dilin kendi çevirisi vardır. İşte sekme çubuğundaki beş düğmenin anahtarları, alfabetik sırayla:",
   "r.engine.rowTip": "Satırı işaretle",
   "r.engine.desc.d1": "Harçlık",
   "r.engine.desc.d2": "Jelibon",
@@ -387,7 +387,7 @@ Esc.lang("tr", {
   "r.engine.o.door.openText": "Kapı açık.",
   "r.engine.o.door.noPower": "Kapı kımıldamıyor. Elektrik olmadan burada hiçbir şey çalışmaz. Bir yerlerde bir sigorta kutusu olmalı.",
   "r.engine.o.door.text": "Kapıda beş düğme yanıyor. Buggy üzerlerindeki yazıları yabancı dillere çevirmiş!",
-  "r.engine.o.door.plate": "Sekmelere, Sparly'nin altında durdukları sırayla bas: soldan sağa.",
+  "r.engine.o.door.plate": "Düğmelere, Sparly'nin sekme çubuğunda durdukları sırayla bas: soldan sağa.",
   "r.engine.o.door.reset": "Yanlış sıra! Her şey başa döndü.",
 
   /* ==================== 4. oda ==================== */
@@ -398,7 +398,7 @@ Esc.lang("tr", {
   "r.vault.drawer.goal": "Çekmecenin üstünde hayvanlardan oluşan gizli bir yazı var. Şifresini çöz!",
   "r.vault.drawer.h": [
     "Masada bir şifre çözme diski 🔄 duruyor. Üstündeki not, anahtarın ne olduğunu söylüyor.",
-    "Anahtar, Sparly'deki sekme sayısı: 5. Diski 5'e çevir ve her hayvanın üstünde hangi rakam olduğuna bak.",
+    "Anahtar, Sparly'nin altındaki çubuktaki düğme sayısı: 5 (dört sekme ve ➕ düğmesi). Diski 5'e çevir ve her hayvanın üstünde hangi rakam olduğuna bak.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Kod 4296."
   ],
   "r.vault.pin.goal": "Kasayı aç. Buggy'nin listesindeki hangi PIN doğru?",
@@ -439,7 +439,7 @@ Esc.lang("tr", {
   "r.vault.o.poster": "Poster",
   "r.vault.o.wheel": "Şifre çözme diski",
   "r.vault.o.wheel.text": "Buggy gizli mesajını bu diskle şifrelemiş. Her rakamın yerine bir hayvan konmuş. Çekmecedeki mesaj:",
-  "r.vault.o.wheel.sticky": "📌 Diskin üstündeki not: “Anahtar = Sparly'nin kaç sekmesi var?”",
+  "r.vault.o.wheel.sticky": "📌 Diskin üstündeki not: “Anahtar = Sparly'nin altındaki çubukta kaç düğme var?”",
   "r.vault.o.monitor": "Ekran",
   "r.vault.o.monitor.text": "Ekranda veritabanından bir tablo var. Sparly kasanın PIN'ini böyle kaydetmiş:",
   "r.vault.o.monitor.after": "PIN'in kendisi hiçbir yerde yok! Sadece tuz ve hash var, yani PIN ile tuzdan yapılan smoothie.",

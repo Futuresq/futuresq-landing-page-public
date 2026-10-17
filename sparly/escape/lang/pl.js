@@ -231,7 +231,7 @@ Esc.lang("pl", {
   "r.start.o.plant.coin": "Między liśćmi coś błyszczy: tajna moneta Sparly!",
   "r.start.o.plant.text": "Roślina w doniczce. Nie potrzebuje kieszonkowego, tylko wody.",
   "r.start.o.tabbar": "Pasek zakładek",
-  "r.start.o.tabbar.text": "Stoisz na pasku zakładek. Jego pięć przycisków prowadzi do różnych części Sparly, zawsze w tej kolejności od lewej do prawej:",
+  "r.start.o.tabbar.text": "Stoisz na pasku zakładek. Ma pięć przycisków: cztery zakładki, które prowadzą do różnych części Sparly, i okrągły przycisk ➕ na środku. Od lewej do prawej są zawsze w tej kolejności:",
   "r.start.o.door": "Drzwi",
   "r.start.o.door.openText": "Drzwi są otwarte. Ruszamy dalej!",
   "r.start.o.door.text": "Drzwi mają zamek szyfrowy w kształcie kwoty. Na tabliczce jest napisane: „Kod = twoje saldo”.",
@@ -322,9 +322,9 @@ Esc.lang("pl", {
     "Pytanie brzmi: zsumuj wszystkie kwoty (amount), ale tylko z wierszy, w których category_id = cat_exp_sweets. Dotknij wierszy, żeby je zaznaczyć.",
     "350 + 425 + 500 = 1275. To jest kod zasilania."
   ],
-  "r.engine.door.goal": "Drzwi mają prąd. Teraz chcą pięciu zakładek we właściwej kolejności, ale w obcych językach!",
+  "r.engine.door.goal": "Drzwi mają prąd. Teraz chcą pięciu przycisków z paska zakładek we właściwej kolejności, ale w obcych językach!",
   "r.engine.door.h": [
-    "Na przyciskach są nazwy zakładek w innych językach. Sprawdź każde słowo na plakacie z tłumaczeniami 📖.",
+    "Na przyciskach są nazwy z paska zakładek w innych językach. Sprawdź każde słowo na plakacie z tłumaczeniami 📖.",
     "Naciskaj przyciski w kolejności z paska zakładek: Pieniądze, Przegląd, Nowy, Życzenia, Odznaki. Ta kolejność jest też w twoim notesie.",
     "Kolejność to: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("pl", {
   "r.engine.inRestaurant": "W restauracji:",
   "r.engine.order": ["Dotykasz Zapisz", "Reguły sprawdzają kwotę", "Store dostaje zadanie", "Baza danych zapisuje nowy wiersz", "Saldo zostaje wczytane ponownie", "Reguły odznak zostają sprawdzone"],
   "r.engine.keysTitle": "Klucze tłumaczeń",
-  "r.engine.keysText": "W kodzie Sparly nie ma stałych tekstów, tylko klucze. Każdy język ma do nich własne tłumaczenie. Oto klucze pięciu zakładek, posortowane alfabetycznie:",
+  "r.engine.keysText": "W kodzie Sparly nie ma stałych tekstów, tylko klucze. Każdy język ma do nich własne tłumaczenie. Oto klucze pięciu przycisków z paska zakładek, posortowane alfabetycznie:",
   "r.engine.rowTip": "Zaznacz wiersz",
   "r.engine.desc.d1": "Kieszonkowe",
   "r.engine.desc.d2": "Żelki",
@@ -387,7 +387,7 @@ Esc.lang("pl", {
   "r.engine.o.door.openText": "Drzwi są otwarte.",
   "r.engine.o.door.noPower": "Drzwi ani drgną. Bez prądu nic tu nie działa. Gdzieś musi być skrzynka z bezpiecznikami.",
   "r.engine.o.door.text": "Na drzwiach świeci pięć przycisków. Buggy przestawił ich napisy na obce języki!",
-  "r.engine.o.door.plate": "Naciskaj zakładki w takiej kolejności, w jakiej są na dole Sparly: od lewej do prawej.",
+  "r.engine.o.door.plate": "Naciskaj przyciski w takiej kolejności, w jakiej są na pasku zakładek Sparly: od lewej do prawej.",
   "r.engine.o.door.reset": "Zła kolejność! Wszystko od początku.",
 
   /* ==================== Room 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("pl", {
   "r.vault.drawer.goal": "Na szufladzie jest tajne pismo ze zwierząt. Odszyfruj je!",
   "r.vault.drawer.h": [
     "Na stole leży koło szyfrowe 🔄. Na jego karteczce jest napisane, co jest kluczem.",
-    "Kluczem jest liczba zakładek w Sparly: 5. Obróć koło na 5 i zobacz, która cyfra stoi nad każdym zwierzęciem.",
+    "Kluczem jest liczba przycisków na pasku na dole Sparly: 5 (cztery zakładki i przycisk ➕). Obróć koło na 5 i zobacz, która cyfra stoi nad każdym zwierzęciem.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Kod to 4296."
   ],
   "r.vault.pin.goal": "Otwórz sejf. Buggy ma listę PIN-ów: który z nich jest właściwy?",
@@ -439,7 +439,7 @@ Esc.lang("pl", {
   "r.vault.o.poster": "Plakat",
   "r.vault.o.wheel": "Koło szyfrowe",
   "r.vault.o.wheel.text": "Tym kołem Buggy zaszyfrował swoją tajną wiadomość. Każdą cyfrę zamienił na zwierzę. Wiadomość na szufladzie:",
-  "r.vault.o.wheel.sticky": "📌 Karteczka na kole: „Klucz = Ile zakładek ma Sparly?”",
+  "r.vault.o.wheel.sticky": "📌 Karteczka na kole: „Klucz = Ile przycisków ma pasek na dole Sparly?”",
   "r.vault.o.monitor": "Ekran",
   "r.vault.o.monitor.text": "Ekran pokazuje tabelę z bazy danych. Tak Sparly zapisał PIN sejfu:",
   "r.vault.o.monitor.after": "Samego PIN-u nigdzie nie ma! Tylko sól i hash, czyli koktajl z PIN-u i soli.",

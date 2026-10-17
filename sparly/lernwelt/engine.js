@@ -17,8 +17,12 @@
     { code: 'pl', label: 'Polski', flag: '🇵🇱', locale: 'pl-PL', cur: 'PLN' },
     { code: 'es', label: 'Español', flag: '🇪🇸', locale: 'es-ES', cur: 'EUR' },
     { code: 'it', label: 'Italiano', flag: '🇮🇹', locale: 'it-IT', cur: 'EUR' },
+    { code: 'cs', label: 'Čeština', flag: '🇨🇿', locale: 'cs-CZ', cur: 'CZK' },
+    // Serbian in both scripts, as in the app: lang/sr.js is Cyrillic, the Latin texts are derived from it.
+    { code: 'sr', label: 'Српски (ћирилица)', flag: '🇷🇸', locale: 'sr-RS', cur: 'RSD', sym: 'дин.' },
+    { code: 'sr-Latn', label: 'Srpski (latinica)', flag: '🇷🇸', locale: 'sr-Latn-RS', cur: 'RSD' },
   ];
-  const SYMBOLS = { EUR: '€', USD: '$', GBP: '£', CHF: 'CHF', PLN: 'zł', RON: 'lei', TRY: '₺' };
+  const SYMBOLS = { EUR: '€', USD: '$', GBP: '£', CHF: 'CHF', PLN: 'zł', RON: 'lei', TRY: '₺', CZK: 'Kč', RSD: 'din.' };
   const FALLBACK_LANG = 'en';
 
   const RANK_MIN = [0, 100, 250, 450, 700, 1000, 1400];
@@ -48,7 +52,38 @@
   const DICT = {};
   let LANG = 'de';
 
-  function addLang(code, obj) { DICT[code] = Object.assign(DICT[code] || {}, obj); }
+  // Serbian Latin from Serbian Cyrillic, letter for letter, like the app (src/i18n/serbianLatin.ts).
+  const SR_LATIN = {
+    а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', ђ: 'đ', е: 'e', ж: 'ž', з: 'z', и: 'i',
+    ј: 'j', к: 'k', л: 'l', љ: 'lj', м: 'm', н: 'n', њ: 'nj', о: 'o', п: 'p', р: 'r',
+    с: 's', т: 't', ћ: 'ć', у: 'u', ф: 'f', х: 'h', ц: 'c', ч: 'č', џ: 'dž', ш: 'š',
+  };
+  const isLetter = (ch) => !!ch && ch.toLowerCase() !== ch.toUpperCase();
+  const isUpper = (ch) => isLetter(ch) && ch === ch.toUpperCase();
+  function toSerbianLatin(text) {
+    const chars = Array.from(text);
+    return chars.map((ch, i) => {
+      const lower = ch.toLowerCase();
+      const latin = SR_LATIN[lower];
+      if (latin === undefined) return ch;
+      if (ch === lower) return latin;
+      // Љ, Њ, Џ become "Lj", "Nj", "Dž" in a capitalised word but "LJ", "NJ", "DŽ" in an all-caps one.
+      const next = chars[i + 1];
+      const allCaps = isUpper(next) || (!isLetter(next) && isUpper(chars[i - 1]));
+      return allCaps ? latin.toUpperCase() : latin.charAt(0).toUpperCase() + latin.slice(1);
+    }).join('');
+  }
+  function latinDeep(v) {
+    if (typeof v === 'string') return toSerbianLatin(v);
+    if (Array.isArray(v)) return v.map(latinDeep);
+    if (v && typeof v === 'object') { const o = {}; for (const k of Object.keys(v)) o[k] = latinDeep(v[k]); return o; }
+    return v;
+  }
+
+  function addLang(code, obj) {
+    DICT[code] = Object.assign(DICT[code] || {}, obj);
+    if (code === 'sr') addLang('sr-Latn', latinDeep(obj));
+  }
   function langInfo(code) { return LANGS.find((l) => l.code === (code || LANG)) || LANGS[0]; }
 
   /** Raw dictionary value (string, array or object), falling back to English, then German. */
@@ -73,9 +108,10 @@
     let f;
     try { f = nf(li.locale, { style: 'currency', currency: li.cur, currencyDisplay: 'narrowSymbol', minimumFractionDigits: digits, maximumFractionDigits: digits }); }
     catch { f = nf(li.locale, { style: 'currency', currency: li.cur, minimumFractionDigits: digits, maximumFractionDigits: digits }); }
-    return f.formatToParts(cents / 100).map((p) => (p.type === 'currency' ? SYMBOLS[li.cur] : p.value)).join('');
+    return f.formatToParts(cents / 100).map((p) => (p.type === 'currency' ? symbolOf(li) : p.value)).join('');
   }
-  function curSymbol(code) { return SYMBOLS[langInfo(code).cur]; }
+  function symbolOf(li) { return li.sym || SYMBOLS[li.cur]; }
+  function curSymbol(code) { return symbolOf(langInfo(code)); }
   function numf(n, code) { return nf(langInfo(code).locale, { maximumFractionDigits: 2 }).format(n); }
   function datef(iso, opts, code) {
     const d = typeof iso === 'string' ? new Date(iso + 'T12:00:00') : iso;
@@ -118,6 +154,7 @@
     const list = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
     for (const l of list) {
       const c = String(l).split(/[-_]/)[0].toLowerCase();
+      if (c === 'sr') return /latn/i.test(l) ? 'sr-Latn' : 'sr';
       if (LANGS.some((x) => x.code === c)) return c;
     }
     return FALLBACK_LANG;
@@ -133,7 +170,7 @@
     if (!langLoads[code]) {
       langLoads[code] = new Promise((resolve) => {
         const el = document.createElement('script');
-        el.src = 'lang/' + code + '.js';
+        el.src = 'lang/' + (code === 'sr-Latn' ? 'sr' : code) + '.js'; // the Latin texts are made from the Cyrillic file
         el.onload = resolve;
         el.onerror = resolve; // fall back to English texts
         document.head.append(el);
@@ -569,6 +606,11 @@
   }
 
   function starsOf(id) { const s = st(id); return [!!s.quiz, !!s.perfect, !!s.ch]; }
+  /** How to earn the stars still missing at a station whose quiz is solved. */
+  function missingStarHints(id) {
+    const s = st(id);
+    return [s.perfect ? null : t('ui.donePerfectHint'), s.ch ? null : t('ui.doneTaskHint', { step: t('ui.stepPlay') })].filter(Boolean).join(' ');
+  }
   function learnStations() { return STATIONS.filter((x) => !x.exam); }
   function totalStars() { return learnStations().reduce((n, x) => n + starsOf(x.id).filter(Boolean).length, 0); }
   function checkStars() { if (totalStars() >= 45) earnBadge('sterne'); }
@@ -670,7 +712,7 @@
         icon('trophy'), h('span', { class: 'cnt' }, earned)),
       onb ? null : h('button', { class: 'iconbtn', type: 'button', title: t('ui.lexicon'), 'aria-label': t('ui.lexicon'), onclick: () => go('lexikon') }, icon('book')),
       h('button', { class: 'iconbtn langbtn', type: 'button', title: app('language_select.title'), 'aria-label': app('language_select.title') + ': ' + langInfo().label, onclick: langModal },
-        icon('globe'), h('span', { class: 'cnt lang-code' }, LANG.toUpperCase())),
+        icon('globe'), h('span', { class: 'cnt lang-code' }, LANG.split('-')[0].toUpperCase())),
       h('button', { class: 'iconbtn', type: 'button', title: S.sound ? t('ui.soundOff') : t('ui.soundOn'), 'aria-label': S.sound ? t('ui.soundOff') : t('ui.soundOn'), onclick: () => { S.sound = !S.sound; save(); renderHUD(false); if (S.sound) sound('click'); } },
         icon(S.sound ? 'soundOn' : 'soundOff')),
       h('button', { class: 'iconbtn', type: 'button', title: effectiveDark() ? t('ui.themeLight') : t('ui.themeDark'), 'aria-label': effectiveDark() ? t('ui.themeLight') : t('ui.themeDark'), onclick: toggleTheme },
@@ -959,21 +1001,21 @@
       as[1].classList.toggle('ok', !!st(sd.id).ch);
       as[2].classList.toggle('ok', !!st(sd.id).quiz);
     }
-    api2.onChallenge = refreshSteps;
+    api2.onChallenge = () => { refreshSteps(); updateDoneBar(); };
 
     function updateDoneBar() {
       const s2 = st(sd.id);
       const next = STATIONS[idx + 1];
       if (s2.done) {
         doneBar.replaceChildren(
-          h('p', null, t('ui.doneText', { n: starsOf(sd.id).filter(Boolean).length }) + (s2.perfect ? '' : ' ' + t('ui.donePerfectHint'))),
+          h('p', null, [t('ui.doneText', { n: starsOf(sd.id).filter(Boolean).length }), missingStarHints(sd.id)].filter(Boolean).join(' ')),
           h('div', { style: { display: 'flex', gap: '10px', flexWrap: 'wrap' } },
             h('button', { class: 'btn ghost', type: 'button', onclick: () => go('map') }, t('ui.toMap')),
             next ? h('button', { class: 'btn', type: 'button', onclick: () => openStation(idx + 1) }, next.exam ? t('ui.toExam') : t('ui.nextStation')) : null));
       } else {
         const ready = !!s2.quiz;
         doneBar.replaceChildren(
-          h('p', null, ready ? t('ui.readyText') : t('ui.notReadyText')),
+          h('p', null, ready ? [t('ui.readyText'), missingStarHints(sd.id)].filter(Boolean).join(' ') : t('ui.notReadyText')),
           h('button', { class: 'btn gold', type: 'button', disabled: !ready, onclick: (e) => completeStation(sd, idx, e.currentTarget) }, t('ui.complete')));
       }
     }
@@ -1041,6 +1083,7 @@
       h('h2', null, stTitle(sd)),
       h('div', { class: 'stars', style: { gap: '6px' } }, stars.map((on) => { const e = starSvg(on); e.style.width = '34px'; e.style.height = '34px'; return e; })),
       h('p', null, t('ui.stationDoneText', { n: stars.filter(Boolean).length })),
+      missingStarHints(sd.id) ? h('p', null, missingStarHints(sd.id)) : null,
       h('div', { class: 'btns' },
         h('button', { class: 'btn ghost', type: 'button', onclick: () => { close(); go('map'); } }, t('ui.toMap')),
         next ? h('button', { class: 'btn', type: 'button', onclick: () => { close(); openStation(idx + 1); } }, next.exam ? t('ui.toExam') : t('ui.nextStation')) : null)));

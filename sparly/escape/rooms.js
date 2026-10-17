@@ -371,13 +371,17 @@
     pl: ['Pieniądze', 'Przegląd', 'Nowy', 'Życzenia', 'Odznaki'],
     es: ['Dinero', 'Resumen', 'Nuevo', 'Deseos', 'Medallas'],
     it: ['Soldi', 'Riepilogo', 'Nuovo', 'Desideri', 'Medaglie'],
+    cs: ['Peníze', 'Přehled', 'Přidat', 'Přání', 'Odznaky'],
+    sr: ['Новац', 'Преглед', 'Ново', 'Жеље', 'Значке'],
   };
+  // Serbian Latin is the same language as Serbian: it isn't on the poster, but a player using it needs its own words.
+  const OWN_WORDS = { 'sr-Latn': ['Novac', 'Pregled', 'Novo', 'Želje', 'Značke'] };
   const TAB_KEYS = ['tabs.money', 'tabs.review', 'tabs.new', 'tabs.wishes', 'tabs.badges'];
-  const FLAG = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷', ro: '🇷🇴', fr: '🇫🇷', pl: '🇵🇱', es: '🇪🇸', it: '🇮🇹' };
+  const FLAG = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷', ro: '🇷🇴', fr: '🇫🇷', pl: '🇵🇱', es: '🇪🇸', it: '🇮🇹', cs: '🇨🇿', sr: '🇷🇸' };
   /** One foreign word per tab, each from a different language, never in the player's own language. */
   function doorWords(lang) {
-    const pool = ['tr', 'pl', 'it', 'ro', 'es', 'fr', 'de', 'en'].filter((l) => l !== lang);
-    const own = TAB_WORDS[lang] || TAB_WORDS.en;
+    const pool = ['tr', 'pl', 'it', 'ro', 'es', 'fr', 'de', 'en', 'cs', 'sr'].filter((l) => l !== lang.split('-')[0]);
+    const own = TAB_WORDS[lang] || OWN_WORDS[lang] || TAB_WORDS.en;
     const used = new Set();
     const res = [];
     for (let i = 0; i < 5; i++) {
@@ -558,7 +562,7 @@
   /* ==================================================================== */
 
   const CIPHER = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐸', '🐙'];
-  const CIPHER_KEY = 5; // "How many tabs does Sparly have?"
+  const CIPHER_KEY = 5; // "How many buttons are in the bar at the bottom of Sparly?" (4 tabs + the ➕ button)
   const DRAWER_CODE = '4296';
   const DRAWER_MSG = DRAWER_CODE.split('').map((d) => CIPHER[(Number(d) + CIPHER_KEY) % 10]);
   const FRUITS = ['🍓', '🍋', '🍇', '🍉', '🍌', '🥝', '🍒', '🍍'];

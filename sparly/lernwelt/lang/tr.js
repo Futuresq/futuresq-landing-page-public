@@ -77,6 +77,7 @@ Lern.lang("tr", {
   "ui.newWordsHint": "İstasyonu bitirdiğinde sözlüğüne eklenirler.",
   "ui.doneText": "İstasyon tamam! Burada 3 yıldızdan %{n} tanesi senin.",
   "ui.donePerfectHint": "Tam isabet yıldızı için quizi hiç hata yapmadan bir daha oyna.",
+  "ui.doneTaskHint": "Bir yıldız daha için “%{step}” bölümündeki görevi tamamla.",
   "ui.nextStation": "Sonraki istasyon",
   "ui.toExam": "Ustalık sınavına git",
   "ui.readyText": "Bütün sorular tamam! İstasyonu bitir ve 25 jetonu al.",
@@ -144,7 +145,7 @@ Lern.lang("tr", {
   "world.1.sub": "Uygulamanın senin için yaptıkları: parayı kaydetmek, biriktirmek, grafiklere bakmak ve rozet toplamak.",
   "world.2.tag": "Dünya 2 · Teknoloji",
   "world.2.title": "Sparly nasıl yapıldı",
-  "world.2.sub": "Kaputun altına bir bakış: yapı taşları, veritabanı, kuruşla hesap ve sekiz dil.",
+  "world.2.sub": "Kaputun altına bir bakış: yapı taşları, veritabanı, kuruşla hesap ve on dil.",
   "world.3.tag": "Dünya 3 · Kalite",
   "world.3.title": "Sparly'yi iyi bir uygulama yapan şeyler",
   "world.3.sub": "Güvenlik, testler, hız, kolay kullanım ve uygulama mağazasına giden yol. Uzmanlar bunlara “işlevsel olmayan gereksinimler” der.",
@@ -172,7 +173,7 @@ Lern.lang("tr", {
   "badge.paket.name": "Kurye",
   "badge.paket.desc": "Bir işlemin yolculuğunu doğru sıraya koydun",
   "badge.weltenbummler.name": "Dünya Gezgini",
-  "badge.weltenbummler.desc": "Sparly'ye 8 dilin hepsinde baktın",
+  "badge.weltenbummler.desc": "Sparly'ye 10 dilin hepsinde baktın",
   "badge.welt2.name": "Usta Yapımcı",
   "badge.welt2.desc": "2. dünyanın tüm istasyonlarını bitirdin",
   "badge.hacker.name": "Hacker Savar",
@@ -205,24 +206,24 @@ Lern.lang("tr", {
 
   /* ---------- İstasyon 1 ---------- */
   "s.start.title": "İşte Sparly",
-  "s.start.short": "Uygulama ve beş sekmesi",
+  "s.start.short": "Uygulama ve dört sekmesi",
   "s.start.lead": "Çocukların harçlıklarını takip etmelerine ve dilekleri için biriktirmelerine yardım eden bir uygulama.",
-  "s.start.challenge": "Telefondaki 5 sekmenin hepsine dokun",
+  "s.start.challenge": "Telefondaki 4 sekmenin hepsine ve ➕ düğmesine dokun",
   "s.start.learn": [
     "p|Sparly telefon için bir uygulama. Çocuklar onunla ne kadar para aldıklarını ve parayı neye harcadıklarını kaydeder. Böylece ne kadar paraları kaldığını her zaman görürler ve istedikleri şeyler için biriktirebilirler.",
     "p|Sparly <strong>9 ile 16 yaş</strong> arası çocuklar için yapıldı. iPhone'da, iPad'de, Android telefonlarda ve tabletlerde çalışır.",
     "fakt|Sparly tamamen <strong>internetsiz</strong> çalışır. Girdiğin her şey telefonunda kalır. Uzmanlar buna <em>offline-first</em> (önce çevrimdışı) der.",
-    "p|Uygulamanın en altında beş düğmeli bir çubuk var. Bunlara <strong>sekme</strong> denir. Her sekme başka bir bölüme götürür:",
+    "p|Uygulamanın en altında beş düğmeli bir çubuk var: dört <strong>sekme</strong> ve ortada büyük, yuvarlak bir düğme. Her sekme başka bir bölüme götürür:",
     "li|💰 <strong>Para</strong>: bakiyen, son gelirlerin ve giderlerin",
     "li|📊 <strong>Özet</strong>: paranın nereye gittiğini gösteren grafikler",
-    "li|➕ <strong>Yeni</strong>: yeni bir şey eklemek için ortadaki büyük yuvarlak düğme",
+    "li|➕ <strong>Yeni</strong>: ortadaki büyük yuvarlak düğme. Bu bir sekme değil: yeni bir şey eklemek için bir menü açar",
     "li|⭐ <strong>Dilekler</strong>: dilek listen ve tasarruf hedeflerin",
     "li|🏆 <strong>Rozetler</strong>: ödül koleksiyonun",
-    "stell|Sparly beş odalı bir ev gibidir. Sekme çubuğu koridordur: Oradan her odaya gidebilirsin. Ortadaki büyük düğme de her yeni şeyin içeri girdiği ön kapıdır.",
+    "stell|Sparly dört odalı bir ev gibidir. Sekme çubuğu koridordur: Oradan her odaya gidebilirsin. Ortadaki büyük düğme de her yeni şeyin içeri girdiği ön kapıdır.",
     "@pro"
   ],
   "s.start.pro.tabs.title": "Sekme çubuğu kodda nasıl görünür",
-  "s.start.pro.tabs.note": "Her sekme bir emoji ve adı için bir anahtar alır. \\uD83D\\uDCB0 gibi tuhaf karakterler, bilgisayarın 💰 emojisi için kullandığı gizli koddur. Anahtarın ne olduğunu 10. istasyonda öğreneceksin.",
+  "s.start.pro.tabs.note": "Her sekme ve ➕ düğmesi bir emoji ve adı için bir anahtar alır. \\uD83D\\uDCB0 gibi tuhaf karakterler, bilgisayarın 💰 emojisi için kullandığı gizli koddur. Anahtarın ne olduğunu 10. istasyonda öğreneceksin.",
   "s.start.info.money": "Ana ekran. En üstte bakiyeni, altında son giderlerini ve gelirlerini, sıradaki rozetini ve günün tasarruf ipucunu görürsün.",
   "s.start.info.review": "Grafikler sana ne kadar para geldiğini ve onu neye harcadığını gösterir. Hafta, ay, yıl ve tüm zaman arasında geçiş yapabilirsin.",
   "s.start.info.new": "Büyük yuvarlak düğme üç seçenekli bir menü açar: gelir, gider ya da yeni bir dilek.",
@@ -230,7 +231,7 @@ Lern.lang("tr", {
   "s.start.info.badges": "Sparly'nin 23 rozetinin hepsi. Kazandıkların renkli parlar, diğerleri gridir ve neyin eksik olduğunu söyler.",
   "s.start.ui.visited": "Ziyaret edildi",
   "s.start.quiz": [
-    { "q": "Sparly'nin altındaki çubukta kaç sekme var?", "o": ["3", "5", "7", "10"], "why": "Para, Özet, Yeni, Dilekler ve Rozetler." },
+    { "q": "Sparly'nin altındaki çubukta kaç sekme var?", "o": ["3", "4", "5", "6"], "why": "Para, Özet, Dilekler ve Rozetler. Ortadaki ➕ bir sekme değil, bir düğmedir." },
     { "q": "Ortadaki büyük ➕ düğmesine dokununca ne açılır?", "o": ["Ayarlar", "Bir menü: gelir, gider ya da yeni dilek", "Bir oyun", "Uygulama mağazası"], "why": "Her yeni şeyi ➕ üzerinden eklersin." },
     { "q": "Sparly'nin çalışması için internet gerekir.", "why": "Sparly offline-first bir uygulama. Her şey doğrudan telefonda çalışır." },
     { "q": "Sparly kimin için yapıldı?", "o": ["Bankalar için", "9–16 yaş arası çocuklar için", "Sadece yetişkinler için", "Öğretmenler için"] }
@@ -311,7 +312,7 @@ Lern.lang("tr", {
   "s.wuensche.quiz": [
     { "q": "Hesabında %{m:5000} var ve tasarruf hedefine %{m:2000} atadın. Ne kadar para hâlâ <strong>kullanılabilir</strong>?", "why": "%{m:5000} − %{m:2000} = %{m:3000}. Atadığın para hâlâ senin, sadece kenara ayrılmış." },
     { "q": "Bir Lego seti %{m:6000}. Onu 3 ay içinde almak istiyorsun. Her ay ne kadar biriktirmen gerekir?", "why": "%{m:6000} bölü 3 ay = ayda %{m:2000}." },
-    { "q": "Bir tasarruf hedefini silersen biriktirilen paraya ne olur?", "o": ["Kaybolur", "Yeniden kullanılabilir olur", "Ailene gider", "İki katına çıkar"], "why": "Para kavanozdan çıkar ve kullanılabilir paranın arasına geri döner." },
+    { "q": "Henüz gerçekleşmemiş bir tasarruf hedefini silersen biriktirilen paraya ne olur?", "o": ["Kaybolur", "Yeniden kullanılabilir olur", "Ailene gider", "İki katına çıkar"], "why": "Para kavanozdan çıkar ve kullanılabilir paranın arasına geri döner." },
     { "q": "Bir tasarruf hedefine atanan para artık senin değildir.", "why": "Hâlâ senindir ve bakiyene dahildir. Sadece kenara ayrılmıştır." }
   ],
   "s.wuensche.words": [
@@ -445,7 +446,7 @@ Lern.lang("tr", {
     "Sparly'nin programlama dili. Elmayla armudu karıştırmamanı sağlar.",
     "Doğrudan telefonda yaşayan küçük bir veritabanı.",
     "Evet, adı gerçekten bu – Almancada “durum” demek! Uygulamanın hafızasıyla, yani store'larla ilgilenir.",
-    "Sekiz dille ilgilenir.",
+    "On dille ilgilenir.",
     "Animasyonları akıcı yapar, örneğin tasarruf pilini."
   ],
   "s.bausteine.pro.ts.title": "TypeScript hatalara nasıl göz kulak olur",
@@ -545,7 +546,7 @@ Lern.lang("tr", {
     "p|Neredeyse 0,3, ama tam değil. Parada bu can sıkıcı olurdu: Birçok işlemden sonra bir kuruş birden eksik ya da fazla çıkabilirdi. Bu yüzden Sparly her tutarı <strong>kuruş cinsinden tam sayı</strong> olarak saklar. %{m:350} yerine 350 saklanır. Tam sayılarla bilgisayar her zaman kusursuz hesaplar.",
     "formula|<span>%{m:350}</span><span>→ × 100 →</span><strong>350 kuruş</strong>",
     "p|Sparly tutarı ancak ekranda göstermeden hemen önce yeniden “%{m:350}” hâline getirir. Buna <strong>biçimlendirme</strong> denir.",
-    "p|Sparly <strong>7 para birimi</strong> gösterebilir: euro, ABD doları, İngiliz sterlini, İsviçre frangı, Polonya zlotisi, Romen leyi ve Türk lirası.",
+    "p|Sparly <strong>9 para birimi</strong> gösterebilir: euro, ABD doları, İngiliz sterlini, İsviçre frangı, Polonya zlotisi, Romen leyi, Türk lirası, Çek korunası ve Sırp dinarı.",
     "merke|Sparly <strong>kur çevirisi yapmaz</strong>! Türk lirasından euroya geçersen ₺10 sadece €10 olur. Saklanan sayı 1000 olarak kalır, sadece simge değişir. Harçlık için bu tam doğrudur, çünkü paran zaten kendi para biriminde.",
     "fakt|Sparly'nin kabul ettiği en büyük tutar %{n:100000000}, yani yüz milyon. Harçlık için bu kadarı yeter herhalde 😄",
     "@pro"
@@ -619,12 +620,12 @@ Lern.lang("tr", {
   ],
 
   /* ---------- İstasyon 10 ---------- */
-  "s.sprachen.title": "Sparly 8 dil konuşuyor",
+  "s.sprachen.title": "Sparly 10 dil konuşuyor",
   "s.sprachen.short": "Sabit metinler yerine anahtarlar",
   "s.sprachen.lead": "Bir uygulama aynı anda Almanca, Türkçe ve Rumence konuşmayı nasıl öğrenir.",
-  "s.sprachen.challenge": "Sparly'ye 8 dilin hepsinde bak",
+  "s.sprachen.challenge": "Sparly'ye 10 dilin hepsinde bak",
   "s.sprachen.learn": [
-    "p|Sparly <strong>Almanca, İngilizce, Türkçe, Rumence, Fransızca, Lehçe, İspanyolca ve İtalyanca</strong> kullanılabilir. İlk açılışta uygulama sana “Dil Seçin” der. Bu öğrenme dünyası da öyle!",
+    "p|Sparly <strong>Almanca, İngilizce, Türkçe, Rumence, Fransızca, Lehçe, İspanyolca, İtalyanca, Çekçe ve Sırpça</strong> (Kiril ve Latin alfabesiyle) kullanılabilir. İlk açılışta uygulama sana “Dil Seçin” der. Bu öğrenme dünyası da öyle!",
     "p|Bu yüzden kodda hiçbir zaman doğrudan “Merhaba” yazmaz. Onun yerine <code>dashboard.greeting</code> gibi bir <strong>anahtar</strong> durur. Her dilin, bu anahtarın ne anlama geldiğini söyleyen kendi dosyası vardır:",
     "@keys",
     "p|<code>{{name}}</code> bir <strong>yer tutucu</strong>. Sparly oraya senin adını koyar. Senin için şöyle olur: <strong>“Merhaba %{name}!”</strong>",
@@ -637,7 +638,7 @@ Lern.lang("tr", {
   "s.sprachen.pro.langs.note": "Her dilin kısa bir kodu (de, en, tr …) ve bir locale'i (yerel ayarı) vardır. Locale, sayıların ve tarihlerin nasıl yazılacağını belirler.",
   "s.sprachen.ui.title": "Dil değiştirici",
   "s.sprachen.ui.hint": "Telefondaki bütün metinler Sparly'nin gerçek çevirilerinden geliyor. Tutarlara da dikkat et: Her dil sayıları farklı yazar ve her birinin kendi para birimi var! Sadece işlemlerin adları aynı kalır. Onları biri kendisi yazmış ve hiçbir uygulama böyle şeyleri çevirmez.",
-  "s.sprachen.ui.tried": "Bakılan: 8 dilden %{n}",
+  "s.sprachen.ui.tried": "Bakılan: %{total} dilden %{n}",
   "s.sprachen.ui.keyText": "Anahtar → metin",
   "s.sprachen.quiz": [
     { "q": "Kodda “Merhaba” kelimesinin yerine ne durur?", "o": ["<code>dashboard.greeting</code> gibi bir anahtar", "Bir resim", "Hiçbir şey", "Aynı anda bütün dillerde “Merhaba”"] },
@@ -938,7 +939,7 @@ Lern.lang("tr", {
     { "q": "Şifreli dışa aktarımdaki GCM mührü ne işe yarar?", "o": ["Dosya değiştirildiyse ya da parola yanlışsa bunu fark eder", "Dosyayı renkli yapar", "Dosyayı gönderir", "Eski dışa aktarımları siler"] },
     { "q": "Migrasyon nedir?", "o": ["Bir güncelleme sırasında veritabanının yeniden düzenlenmesi", "Başka bir ülkeye taşınmak", "Bir rozet", "Bir grafik"] },
     { "q": "Hangi gereksinim <strong>işlevsel olmayan</strong> bir gereksinimdir?", "o": ["Uygulama bir saniyeden kısa sürede tepki vermeli", "Bir gider ekleyebilirsin", "Bir dilek listesi var", "Rozet toplayabilirsin"], "why": "Uygulamanın <em>ne</em> yaptığını değil, bir şeyi <em>ne kadar iyi</em> yaptığını anlatır." },
-    { "q": "Sparly kaç dil konuşur?", "o": ["8", "2", "5", "100"] },
+    { "q": "Sparly kaç dil konuşur?", "o": ["10", "2", "5", "100"] },
     { "q": "Bir uzman veritabanı dosyasını kopyaladı. Dört haneli bir PIN'i bulması ne kadar sürer?", "o": ["Bekleme süreleri yüzünden 7 saatten fazla", "Göz açıp kapayıncaya kadar, çünkü bekleme süreleri sadece uygulamada var", "İmkânsız, asla bulamaz", "Tam 100 yıl"], "why": "Sadece %{n:10000} PIN var. Uygulamanın dışında hepsini karıştırıp karşılaştırabilir." }
   ]
 });

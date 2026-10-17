@@ -231,7 +231,7 @@ Esc.lang("fr", {
   "r.start.o.plant.coin": "Quelque chose brille entre les feuilles : une pièce mystère Sparly !",
   "r.start.o.plant.text": "Une plante en pot. Elle n'a pas besoin d'argent de poche, juste d'eau.",
   "r.start.o.tabbar": "Barre d'onglets",
-  "r.start.o.tabbar.text": "Tu es debout sur la barre d'onglets. Ses cinq boutons mènent aux différents espaces de Sparly, toujours dans cet ordre, de gauche à droite :",
+  "r.start.o.tabbar.text": "Tu es debout sur la barre d'onglets. Elle a cinq boutons : quatre onglets qui mènent aux différents espaces de Sparly et, au milieu, le bouton rond ➕. De gauche à droite, ils sont toujours dans cet ordre :",
   "r.start.o.door": "Porte",
   "r.start.o.door.openText": "La porte est ouverte. En avant !",
   "r.start.o.door.text": "La porte a une serrure à code en forme de montant. Sur la plaque, on peut lire : « Code = ton solde ».",
@@ -322,9 +322,9 @@ Esc.lang("fr", {
     "La question dit : additionne tous les montants (amount), mais seulement dans les lignes où category_id = cat_exp_sweets. Touche les lignes pour les marquer.",
     "350 + 425 + 500 = 1275. C'est le code du courant."
   ],
-  "r.engine.door.goal": "La porte a du courant. Maintenant, elle veut les cinq onglets dans le bon ordre, mais dans des langues étrangères !",
+  "r.engine.door.goal": "La porte a du courant. Maintenant, elle veut les cinq boutons de la barre d'onglets dans le bon ordre, mais dans des langues étrangères !",
   "r.engine.door.h": [
-    "Sur les boutons, il y a les noms des onglets dans d'autres langues. Cherche chaque mot sur l'affiche des traductions 📖.",
+    "Sur les boutons, il y a les noms de la barre d'onglets dans d'autres langues. Cherche chaque mot sur l'affiche des traductions 📖.",
     "Appuie sur les boutons dans l'ordre de la barre d'onglets : Argent, Bilan, Nouveau, Souhaits, Badges. Cet ordre est aussi dans ton carnet.",
     "L'ordre est : %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("fr", {
   "r.engine.inRestaurant": "Au restaurant :",
   "r.engine.order": ["Tu touches Enregistrer", "Les règles vérifient le montant", "Le store reçoit la mission", "La base de données enregistre une nouvelle ligne", "Le solde est rechargé", "Les règles des badges sont vérifiées"],
   "r.engine.keysTitle": "Clés de traduction",
-  "r.engine.keysText": "Dans le code de Sparly, il n'y a pas de texte fixe, mais une clé. Pour chaque langue, il existe une traduction. Voici les clés des cinq onglets, dans l'ordre alphabétique :",
+  "r.engine.keysText": "Dans le code de Sparly, il n'y a pas de texte fixe, mais une clé. Pour chaque langue, il existe une traduction. Voici les clés des cinq boutons de la barre d'onglets, dans l'ordre alphabétique :",
   "r.engine.rowTip": "Marquer la ligne",
   "r.engine.desc.d1": "Argent de poche",
   "r.engine.desc.d2": "Oursons gélifiés",
@@ -387,7 +387,7 @@ Esc.lang("fr", {
   "r.engine.o.door.openText": "La porte est ouverte.",
   "r.engine.o.door.noPower": "La porte ne bouge pas. Sans courant, rien ne marche ici. Il doit y avoir un tableau électrique quelque part.",
   "r.engine.o.door.text": "Sur la porte, cinq boutons sont allumés. Buggy a écrit leurs noms dans des langues étrangères !",
-  "r.engine.o.door.plate": "Appuie sur les onglets dans l'ordre où ils sont en bas de Sparly : de gauche à droite.",
+  "r.engine.o.door.plate": "Appuie sur les boutons dans l'ordre où ils sont dans la barre d'onglets de Sparly : de gauche à droite.",
   "r.engine.o.door.reset": "Mauvais ordre ! Tout recommence au début.",
 
   /* ==================== Salle 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("fr", {
   "r.vault.drawer.goal": "Sur le tiroir, il y a un message secret écrit avec des animaux. Déchiffre-le !",
   "r.vault.drawer.h": [
     "Sur le bureau, il y a un disque décodeur 🔄. Sa petite note dit quelle est la clé.",
-    "La clé est le nombre d'onglets de Sparly : 5. Tourne le disque sur 5 et regarde quel chiffre est au-dessus de chaque animal.",
+    "La clé est le nombre de boutons dans la barre en bas de Sparly : 5 (quatre onglets et le bouton ➕). Tourne le disque sur 5 et regarde quel chiffre est au-dessus de chaque animal.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Le code est 4296."
   ],
   "r.vault.pin.goal": "Ouvre le coffre-fort. Quel PIN de la liste de Buggy est le bon ?",
@@ -439,7 +439,7 @@ Esc.lang("fr", {
   "r.vault.o.poster": "Affiche",
   "r.vault.o.wheel": "Disque décodeur",
   "r.vault.o.wheel.text": "Avec ce disque, Buggy a chiffré son message secret. Chaque chiffre a été remplacé par un animal. Le message sur le tiroir :",
-  "r.vault.o.wheel.sticky": "📌 Note sur le disque : « Clé = Combien d'onglets a Sparly ? »",
+  "r.vault.o.wheel.sticky": "📌 Note sur le disque : « Clé = Combien de boutons a la barre en bas de Sparly ? »",
   "r.vault.o.monitor": "Écran",
   "r.vault.o.monitor.text": "L'écran montre une table de la base de données. Voici comment Sparly a enregistré le PIN du coffre-fort :",
   "r.vault.o.monitor.after": "Le PIN lui-même n'est écrit nulle part ! Seulement le sel et le hash, c'est-à-dire le smoothie fait avec le PIN et le sel.",

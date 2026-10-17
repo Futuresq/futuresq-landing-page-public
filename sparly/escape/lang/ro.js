@@ -231,7 +231,7 @@ Esc.lang("ro", {
   "r.start.o.plant.coin": "Printre frunze sclipește ceva: o monedă Sparly secretă!",
   "r.start.o.plant.text": "O plantă în ghiveci. N-are nevoie de bani de buzunar, doar de apă.",
   "r.start.o.tabbar": "Bara de taburi",
-  "r.start.o.tabbar.text": "Stai pe bara de taburi. Cele cinci butoane ale ei duc în zonele lui Sparly, mereu în ordinea asta, de la stânga la dreapta:",
+  "r.start.o.tabbar.text": "Stai pe bara de taburi. Are cinci butoane: patru taburi care duc în zonele lui Sparly și, în mijloc, butonul rotund ➕. De la stânga la dreapta, stau mereu în ordinea asta:",
   "r.start.o.door": "Ușă",
   "r.start.o.door.openText": "Ușa e deschisă. Mai departe!",
   "r.start.o.door.text": "Ușa are un lacăt cu cifru care arată ca o sumă de bani. Pe plăcuță scrie: „Cod = soldul tău”.",
@@ -322,9 +322,9 @@ Esc.lang("ro", {
     "Întrebarea spune: adună toate sumele (amount), dar doar din rândurile cu category_id = cat_exp_sweets. Apasă pe rânduri ca să le marchezi.",
     "350 + 425 + 500 = 1275. Ăsta e codul de curent."
   ],
-  "r.engine.door.goal": "Ușa are curent. Acum vrea cele cinci taburi în ordinea corectă, dar în limbi străine!",
+  "r.engine.door.goal": "Ușa are curent. Acum vrea cele cinci butoane din bara de taburi în ordinea corectă, dar în limbi străine!",
   "r.engine.door.h": [
-    "Pe butoane sunt numele taburilor în alte limbi. Caută fiecare cuvânt pe afișul cu traduceri 📖.",
+    "Pe butoane sunt numele din bara de taburi în alte limbi. Caută fiecare cuvânt pe afișul cu traduceri 📖.",
     "Apasă butoanele în ordinea din bara de taburi: Bani, Rezumat, Nou, Dorințe, Insigne. O găsești și în carnețelul tău.",
     "Ordinea este: %{w}."
   ],
@@ -346,7 +346,7 @@ Esc.lang("ro", {
   "r.engine.inRestaurant": "La restaurant:",
   "r.engine.order": ["Apeși pe Salvează", "Regulile verifică suma", "Store-ul primește sarcina", "Baza de date salvează un rând nou", "Soldul se reîncarcă", "Regulile insignelor sunt verificate"],
   "r.engine.keysTitle": "Chei de traducere",
-  "r.engine.keysText": "În codul lui Sparly nu scrie niciun text fix, ci o cheie. Pentru fiecare limbă există o traducere separată. Iată cheile celor cinci taburi, în ordine alfabetică:",
+  "r.engine.keysText": "În codul lui Sparly nu scrie niciun text fix, ci o cheie. Pentru fiecare limbă există o traducere separată. Iată cheile celor cinci butoane din bara de taburi, în ordine alfabetică:",
   "r.engine.rowTip": "Marchează rândul",
   "r.engine.desc.d1": "Bani de buzunar",
   "r.engine.desc.d2": "Ursuleți gumați",
@@ -387,7 +387,7 @@ Esc.lang("ro", {
   "r.engine.o.door.openText": "Ușa e deschisă.",
   "r.engine.o.door.noPower": "Ușa nu se clintește. Fără curent, aici nu merge nimic. Pe undeva trebuie să fie o cutie cu siguranțe.",
   "r.engine.o.door.text": "Pe ușă luminează cinci butoane. Buggy le-a schimbat etichetele în limbi străine!",
-  "r.engine.o.door.plate": "Apasă taburile în ordinea în care stau jos în Sparly: de la stânga la dreapta.",
+  "r.engine.o.door.plate": "Apasă butoanele în ordinea în care stau în bara de taburi din Sparly: de la stânga la dreapta.",
   "r.engine.o.door.reset": "Ordine greșită! Totul de la capăt.",
 
   /* ==================== Camera 4 ==================== */
@@ -398,7 +398,7 @@ Esc.lang("ro", {
   "r.vault.drawer.goal": "Pe sertar e un mesaj secret scris cu animale. Descifrează-l!",
   "r.vault.drawer.h": [
     "Pe masă e un disc de decodare 🔄. Pe bilețelul de pe el scrie care e cheia.",
-    "Cheia e numărul de taburi din Sparly: 5. Rotește discul pe 5 și uită-te ce cifră stă deasupra fiecărui animal.",
+    "Cheia e numărul de butoane din bara de jos din Sparly: 5 (patru taburi și butonul ➕). Rotește discul pe 5 și uită-te ce cifră stă deasupra fiecărui animal.",
     "🐙 = 4, 🐼 = 2, 🐰 = 9, 🐱 = 6. Codul e 4296."
   ],
   "r.vault.pin.goal": "Deschide seiful. Care PIN de pe lista lui Buggy e cel corect?",
@@ -439,7 +439,7 @@ Esc.lang("ro", {
   "r.vault.o.poster": "Afiș",
   "r.vault.o.wheel": "Disc de decodare",
   "r.vault.o.wheel.text": "Cu discul ăsta și-a criptat Buggy mesajul secret. Fiecare cifră a fost înlocuită cu un animal. Mesajul de pe sertar:",
-  "r.vault.o.wheel.sticky": "📌 Bilețel pe disc: „Cheia = Câte taburi are Sparly?”",
+  "r.vault.o.wheel.sticky": "📌 Bilețel pe disc: „Cheia = Câte butoane are bara de jos din Sparly?”",
   "r.vault.o.monitor": "Ecran",
   "r.vault.o.monitor.text": "Ecranul arată un tabel din baza de date. Așa a salvat Sparly PIN-ul seifului:",
   "r.vault.o.monitor.after": "PIN-ul însuși nu apare nicăieri! Doar sarea și hash-ul, adică smoothie-ul făcut din PIN și sare.",
